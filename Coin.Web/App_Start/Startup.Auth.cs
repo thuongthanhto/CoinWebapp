@@ -81,9 +81,15 @@ namespace Coin.Web
         }
         public class AuthorizationServerProvider : OAuthAuthorizationServerProvider
         {
-            public override async Task ValidateClientAuthentication(OAuthValidateClientAuthenticationContext context)
+            public override Task ValidateClientAuthentication(OAuthValidateClientAuthenticationContext context)
             {
-                context.Validated();
+                Task t = new Task(() =>
+                {
+                    context.Validated();
+                });
+
+                t.Start();
+                return t;
             }
             public override async Task GrantResourceOwnerCredentials(OAuthGrantResourceOwnerCredentialsContext context)
             {
