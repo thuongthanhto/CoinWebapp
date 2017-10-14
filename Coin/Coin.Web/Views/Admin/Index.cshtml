@@ -1,0 +1,147 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Bittrex.com - Log in</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer" />
+    <meta name="referrer" content="never" />
+
+    <!-- ****** faviconit.com favicons ****** -->
+    <!-- Basic favicons -->
+    <link rel="shortcut icon" sizes="16x16 32x32 48x48 64x64" href="/Content/img/logos/bittrex.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="/Content/img/logos/bittrex.ico">
+    <!--[if IE]><link rel="shortcut icon" href="/Content/img/logos/bittrex.ico"><![endif]-->
+    <!-- For Opera Speed Dial -->
+    <link rel="icon" type="image/png" sizes="195x195" href="/Content/img/logos/bittrex-195.png">
+    <!-- For iPad with high-resolution Retina Display running iOS ≥ 7 -->
+    <link rel="apple-touch-icon" sizes="152x152" href="/Content/img/logos/bittrex-152.png">
+    <!-- For iPad with high-resolution Retina Display running iOS ≤ 6 -->
+    <link rel="apple-touch-icon" sizes="144x144" href="/Content/img/logos/bittrex-144.png ">
+    <!-- For iPhone with high-resolution Retina Display running iOS ≥ 7 -->
+    <link rel=" apple-touch-icon" sizes="120x120" href="/Content/img/logos/bittrex-120.png">
+    <!-- For iPhone with high-resolution Retina Display running iOS ≤ 6 -->
+    <link rel="apple-touch-icon" sizes="114x114" href="/Content/img/logos/bittrex-114.png">
+    <!-- For Google TV devices -->
+    <link rel="icon" type="image/png" sizes="96x96" href="/Content/img/logos/bittrex-96.png">
+    <!-- For iPad Mini -->
+    <link rel="apple-touch-icon" sizes="76x76" href="/Content/img/logos/bittrex-76.png">
+    <!-- For first- and second-generation iPad -->
+    <link rel="apple-touch-icon" sizes="72x72" href="/Content/img/logos/bittrex-72.png">
+    <!-- For non-Retina iPhone, iPod Touch and Android 2.1+ devices -->
+    <link rel="apple-touch-icon" href="/Content/img/logos/bittrex-57.png">
+    <!-- Windows 8 Tiles -->
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-TileImage" content="/Content/img/logos/bittrex-144.png">
+    <!-- ****** faviconit.com favicons ****** -->
+    <!-- Core CSS -->
+    <link href="~/Assets/admin/css/cryptocoins.css" rel="stylesheet" />
+    <link href="~/Assets/admin/css/tpcore.css" rel="stylesheet" />
+    <link href="~/Assets/admin/css/bcore.css" rel="stylesheet" />
+
+    <script src="~/Assets/admin/js/modernizr.js"></script>
+
+
+    <!-- this page specific styles -->
+    <link href="~/Assets/admin/css/layout.css" rel="stylesheet" />
+    <link href="~/Assets/admin/css/home.css" rel="stylesheet" />
+    <link href="~/Assets/admin/css/style.css" rel="stylesheet" />
+    <link href="~/Assets/admin/libs/toastr/toastr.min.css" rel="stylesheet" />
+    <link href="~/Assets/admin/libs/ng-table/dist/ng-table.css" rel="stylesheet" />
+
+
+    <!-- open sans font -->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet noreferrer' type='text/css' />
+    <!-- lato font -->
+    <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic,900italic' rel='stylesheet noreferrer' type='text/css' />
+    <!--[if lt IE 9]>
+        <script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+
+</head>
+<body ng-app="coin" ng-controller="rootController">
+
+    <div ui-view></div>
+
+    <script src="~/Assets/admin/js/tpcore.js"></script>
+    <script src="~/Assets/admin/js/utility.js"></script>
+    <script src="~/Assets/admin/js/modernizr.js"></script>
+    <script src="~/Assets/admin/js/amcharts.js"></script>
+    <script src="~/Assets/admin/js/bittrexViewModel.js"></script>
+    <script src="~/Assets/admin/js/jquery.jcarousel.min.js"></script>
+
+    @*Angular JS*@
+    <script src="~/Assets/admin/libs/angular/angular.js"></script>
+    <script src="~/Assets/admin/libs/angular-ui-router/release/angular-ui-router.js"></script>
+
+    @*Plugin*@
+    <script src="~/Assets/admin/libs/toastr/toastr.min.js"></script>
+    <script src="~/Assets/admin/libs/bootbox/bootbox.js"></script>
+    <script src="~/Assets/admin/libs/ngBootbox/dist/ngBootbox.js"></script>
+    <script src="~/Assets/admin/libs/angular-loading-bar/build/loading-bar.js"></script>
+    <script src="~/Assets/admin/libs/angular-local-storage/dist/angular-local-storage.js"></script>
+    <script src="~/Assets/admin/libs/angular-recaptcha/release/angular-recaptcha.js"></script>
+    <script src="~/Assets/admin/libs/mathjs/dist/math.js"></script>
+    <script src="~/Assets/admin/libs/ng-table/dist/ng-table.js"></script>
+    <script src="~/Assets/admin/libs/jquery/dist/jquery.js"></script>
+    <script src="~/Assets/admin/libs/signalr/jquery.signalR.js"></script>
+    <script src="~/signalr/hubs"></script>
+
+    @*Function common*@
+    <script src="~/app/shared/common/func.js"></script>
+
+    @*Module of application*@
+    <script src="~/app/shared/modules/coin.common.js"></script>
+
+    @*Filter*@
+    <script src="~/app/shared/filters/statusFilter.js"></script>
+
+    @*Service*@
+    <script src="~/app/shared/services/apiService.js"></script>
+    <script src="~/app/shared/services/authData.js"></script>
+    <script src="~/app/shared/services/authorizationService.js"></script>
+    <script src="~/app/shared/services/authenticationService.js"></script>
+    <script src="~/app/shared/services/loginService.js"></script>
+    <script src="~/app/shared/services/notificationService.js"></script>
+    <script src="~/app/shared/services/commonService.js"></script>
+    
+
+    @*Directive*@
+    <script src="~/app/shared/directives/pagerDirective.js"></script>
+
+    @*Router*@
+    <script src="~/app/components/application_groups/applicationGroup.module.js"></script>
+    <script src="~/app/components/application_roles/applicationRole.module.js"></script>
+    <script src="~/app/components/application_users/applicationUser.module.js"></script>
+    <script src="~/app/app.js"></script>
+
+    @*Global constant*@
+    <script src="~/app/shared/common/app.config.js"></script>
+
+    @*Controller*@
+    <script src="~/app/components/home/rootController.js"></script>
+    <script src="~/app/components/home/homeController.js"></script>
+
+    <script src="~/app/components/application_groups/applicationGroupListController.js"></script>
+    <script src="~/app/components/application_groups/applicationGroupAddController.js"></script>
+    <script src="~/app/components/application_groups/applicationGroupEditController.js"></script>
+
+    <script src="~/app/components/application_roles/applicationRoleListController.js"></script>
+    <script src="~/app/components/application_roles/applicationRoleEditController.js"></script>
+    <script src="~/app/components/application_roles/applicationRoleAddController.js"></script>
+
+    <script src="~/app/components/application_users/applicationUserAddController.js"></script>
+    <script src="~/app/components/application_users/applicationUserEditController.js"></script>
+    <script src="~/app/components/application_users/applicationUserListController.js"></script>
+
+    <script src="~/app/components/login/loginController.js"></script>
+    <script src="~/app/components/fogot_password/fogotPasswordController.js"></script>
+    <script src="~/app/components/register/registerController.js"></script>
+</body>
+</html>
+<style>
+    .has-error {
+        color: red;
+    }
+</style>

@@ -1,0 +1,36 @@
+﻿<link href="../../../Assets/admin/css/signin.css" rel="stylesheet" />
+<div class="login-wrapper">
+    <a href="/">
+        <img class="logo" src="/Assets/admin/img/bittrex-logo-white-no-tagline.png" />
+    </a>
+    <div class="box">
+        <div class="content-wrap">
+            <h6>Sign Up</h6>
+            <form action="/Account/Register" class="form-horizontal" id="registerForm" method="post" role="form">
+                <input name="__RequestVerificationToken" type="hidden" value="fdXYqyuhBAGXO4-GtYYb8854V0b1kqmDvLBsgq8BZwb891VkRoKYQzyyMy5FFW3UW7sUTo1RK691QSBcQWHQ7Ld0IPI1" /><div class="validation-summary-valid" data-valmsg-summary="true">
+                    <ul>
+                        <li style="display:none"></li>
+                    </ul>
+                </div><input data-val="true" data-val-required="The RecaptchaPublicKey field is required." id="RecaptchaPublicKey" name="RecaptchaPublicKey" type="hidden" value="6Lf3WSAUAAAAAOLCgtYTXztdPHtTuZxq9k5DHthK" /><input class="form-control" data-val="true" data-val-email="Invalid Email Address" data-val-required="The email address is required" id="UserName" name="UserName" placeholder="E-mail address" type="text" value="" /><input autocomplete="off" class="form-control" data-val="true" data-val-length="The Password must be at least 8 characters long." data-val-length-max="100" data-val-length-min="8" data-val-required="The Password field is required." id="Password" name="Password" placeholder="Password" type="password" /><input autocomplete="off" class="form-control" data-val="true" data-val-equalto="The password and confirmation password do not match." data-val-equalto-other="*.Password" id="ConfirmPassword" name="ConfirmPassword" placeholder="Confirm Password" type="password" />                <div class="checkbox">
+                    <label>
+                        <input data-val="true" data-val-required="The Confirm Terms of Service field is required." id="ConfirmToS" name="ConfirmToS" type="checkbox" value="true" /><input name="ConfirmToS" type="hidden" value="false" /> I agree to the Bittrex.com <a href="/Home/Terms" target="_blank">Terms of Service</a>
+                    </label>
+                </div>
+                <div class="action">
+                    <button class="g-recaptcha btn btn-primary login"
+                            data-sitekey="6Lf3WSAUAAAAAOLCgtYTXztdPHtTuZxq9k5DHthK"
+                            data-callback="OnSubmit">
+                        <i class="fa fa-user-plus"></i>&nbsp;Sign Up
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="already">
+        <p>
+            Already have an account?
+            <a href="admin#!/login">Sign in</a>
+        </p>
+    </div>
+</div>
+<div style="height:70px"></div>

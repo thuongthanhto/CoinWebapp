@@ -1,0 +1,267 @@
+﻿<div id="header-navigation" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container-fluid container-header">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/Home/Markets">
+                <img src="/Content/img/logos/bittrex-logo-transparent.png" alt='Bittrex.com' height="24" />
+            </a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-left">
+                <li class="dropdown" id="dash_menu_btc2">
+                    <a href="#dash_menu_btc" class="dropdown-toggle" data-toggle="collapse">
+                        <i class="fa fa-btc"></i>
+                        <span>Markets</span>
+                        <b class="caret"></b>
+                    </a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-left">
+                <li class="dropdown" id="dash_menu_fiat2">
+                    <a href="#dash_menu_fiat" class="dropdown-toggle" data-toggle="collapse">
+                        <i class="fa fa-usd"></i>
+                        <span>Markets</span>
+                        <b class="caret"></b>
+                    </a>
+                </li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="javascript:document.getElementById('logoutForm').submit()" role="button" title="Logout">
+                        <i class="fa fa-sign-out"></i>
+                        <span class="hidden-sm">&nbsp; Logout</span>
+                    </a>
+                </li>
+            </ul>
+            <form action="/Account/LogOff" class="navbar-right" id="logoutForm" method="post"><input name="__RequestVerificationToken" type="hidden" value="Xwgg9_nkVy6rmHvR-LO-dqB9MXU6YbM6BGzyKGOj8Z5HvafCQvLI4TcXxuApqppMYw-1vMvXF8GzFAOwVC6gteE7vX7nJuPS-wuXScdebU-lQXTtPCC42p5Y3MpMxsxY-HLtwg2" /></form>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="fa fa-flask"></i><span class="hidden-sm">&nbsp; Lab</span>  <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="/Lab/Any2Any">
+                                <i class="fa fa-random"></i>
+                                <span>&nbsp; Any 2 Any</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Lab/AutoSell">
+                                <i class="fa fa-recycle"></i>
+                                <span>&nbsp; Auto-Sell</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Lab/ProfitLoss">
+                                <i class="fa fa-line-chart"></i>
+                                <span>&nbsp; Profit-Loss</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li id="dash_menu_history">
+                    <a href="/History">
+                        <i class="fa fa-calendar"></i>
+                        <span class="hidden-sm">&nbsp; Orders</span>
+                    </a>
+                </li>
+                <li id="dash_menu_wallet">
+                    <a href="/Balance">
+                        <i class="fa fa-btc"></i>
+                        <span class="hidden-sm">&nbsp; Wallets</span>
+                    </a>
+                </li>
+                <li id="dash_menu_settings">
+                    <a href="/Manage">
+                        <i class="fa fa-cog"></i>
+                        <span class="hidden-sm">&nbsp; Settings</span>
+                    </a>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="fa fa-question-circle"></i><span class="hidden-sm">&nbsp; Help</span>  <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li id="dash_menu_news">
+                            <a href="/News">
+                                <i class="fa fa-bullhorn"></i>
+                                <span>&nbsp; News</span>
+                            </a>
+                        </li>
+                        <li id="dash_menu_status">
+                            <a href="/Status">
+                                <i class="fa fa-lightbulb-o"></i>
+                                <span>&nbsp; Site Status</span>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li><a href="/Home/About">About</a></li>
+                        <li><a href="/Privacy">Your Privacy and Security</a></li>
+                        <li><a href="/Home/Cookies">Cookie Policy</a></li>
+                        <li><a href="/Home/Terms">Terms and Conditions</a></li>
+                        <li><a href="/Home/Api">API Documentation</a></li>
+                        <li><a href="/Fees">Fees</a></li>
+                        <li><a href="https://bittrex.zendesk.com/hc/en-us" rel="noreferrer">Support</a></li>
+                        <li><a href="/Home/Contact">Contact Us</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- end header -->
+
+<div id="media-width-detection-element"></div>
+<div id="layout-navigation" class="col-sm-12 menu-wrapper">
+    <div id="dash_menu_btc" class="collapse menu-content" style="z-index:300">
+        <p class="menu-sort">
+            Sort By:
+            <select data-bind="options: menu.availableSort, optionsText: 'sortName', value: menu.selectedSort, optionsCaption: 'Choose...'"></select>
+            Max Rows:
+            <select data-bind="options: menu.availableRows, optionsText: 'sortName', value: menu.selectedRows, optionsCaption: 'Choose...'"></select>
+            Search:
+            <input data-bind="value: menu.filter, valueUpdate: 'afterkeydown'" />
+        </p>
+        <table data-bind="foreach: menu.marketsBtcRows" class="menu-table">
+            <tr data-bind="foreach: $data">
+                <td data-bind="css: { 'even': isEven(), 'odd': !isEven() }">
+                    <div>
+                        <div class="col-sm-2 name">
+                            <a data-bind="attr: { href: urlPath, title:marketCurrencyName }, text:marketCurrency">Link</a>
+                        </div>
+                        <div class="col-sm-6 price"> <div data-bind="text: displayLast()"></div></div>
+                        <div class="col-sm-4 delta"> <div data-bind="text: displayChange(), css: { 'dyn-div-up': change() > 0, 'dyn-div-down': change() < 0, 'dyn-div-none': change() == 0 }"></div></div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="dash_menu_fiat" class="collapse menu-content" style="z-index:300">
+        <p class="menu-sort">
+            Sort By:
+            <select data-bind="options: menu.availableSort, optionsText: 'sortName', value: menu.selectedSort, optionsCaption: 'Choose...'"></select>
+            Max Rows:
+            <select data-bind="options: menu.availableRows, optionsText: 'sortName', value: menu.selectedRows, optionsCaption: 'Choose...'"></select>
+            Search:
+            <input data-bind="value: menu.filter, valueUpdate: 'afterkeydown'" />
+        </p>
+        <table data-bind="foreach: menu.marketsFiatRows" class="menu-table">
+            <tr data-bind="foreach: $data">
+                <td data-bind="css: { 'even': isEven(), 'odd': !isEven() }">
+                    <div>
+                        <div class="col-sm-2 name">
+                            <a data-bind="attr: { href: urlPath, title:marketCurrencyName }, text:marketCurrency">Link</a>
+                        </div>
+                        <div class="col-sm-6 price"> <div data-bind="text: displayLast()"></div></div>
+                        <div class="col-sm-4 delta"> <div data-bind="text: displayChange(), css: { 'dyn-div-up': change() > 0, 'dyn-div-down': change() < 0, 'dyn-div-none': change() == 0 }"></div></div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div id="alert-news" class="alert alert-info alert-override" style="display:none; margin-top:48px; margin-bottom:0px">
+    <i class="fa fa-exclamation-sign"></i>
+    <span id="alert-news-text"></span>
+    <a href="/News">&nbsp;For more information, see the News page.</a>
+</div>
+
+<div id="body-container">
+    <div id="event-store"></div>
+    <div class="content">
+        <div ui-view></div>
+    </div>
+
+    <!-- START Navigation FOOTER -->
+    <div id="footmainbkg" style="width:100%; height: 78px; background-color: #999; margin-top:40px; margin-bottom: 47px;">
+        <div class="footmain" style="width:1140px; margin: 0 auto; background-color: #999;">
+            <div class="footermlinkl">
+                <li><a href="https://bittrex.com/Home/About" style="text-decoration: underline;">About</a></li>
+                <li><a href="https://bittrex.com/Privacy" style="text-decoration: underline;">Privacy</a></li>
+            </div>
+            <div class="footermlinkl">
+                <li><a href="https://bittrex.com/Status" style="text-decoration: underline;">Website Status</a></li>
+                <li><a href="https://bittrex.com/Home/Api" style="text-decoration: underline;">API Documentation</a></li>
+            </div>
+            <div class="footermlinkl">
+                <li><a href="https://bittrex.com/Home/Cookies" style="text-decoration: underline;">Cookies</a></li>
+                <li><a href="https://bittrex.com/Home/Terms" style="text-decoration: underline;">Terms</a></li>
+            </div>
+            <div class="footermlinkl">
+                <li><a href="https://bittrex.com/Fees" style="text-decoration: underline;">Fees</a></li>
+                <li><a href="https://bittrex.com/Home/Contact" style="text-decoration: underline;">Press</a></li>
+            </div>
+
+            <div class="footermlinkr" style="float: right;">
+                <li style="float: right;"><a href="https://twitter.com/bittrexexchange" style="text-decoration: underline;"><i class="fa fa-twitter" style="padding-right: 6px;"></i>Follow Us on Twitter</a></li>
+                <li style="float: right;"><a href="https://www.facebook.com/bittrex" style="text-decoration: underline;"><i class="fa fa-facebook" style="padding-right: 6px;"></i>Like Us on Facebook</a></li>
+            </div>
+            <div class="footermlinkr" style="float: right;">
+                <li><a href="https://bittrex.zendesk.com/hc/en-us" rel="noreferrer" style="text-decoration: underline;"><div>Support</div></a></li>
+                <li><a href="https://bittrex.com/Home/Contact" style="text-decoration: underline;"><div>Contact</div></a></li>
+            </div>
+
+        </div>
+    </div>
+    <!-- END Navigation FOOTER -->
+    <div class="hidden-lg" style="margin-bottom: 47px"></div>
+</div>
+
+<div class="modal" tabindex="-1" role="dialog" aria-labelledby="resfreshModalLabel" aria-hidden="true" id="refreshModal">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="resfreshModalLabel">
+                    Bittrex has updated, please refresh your browser
+                </h4>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" onclick="window.location.reload(true); return false;"><span class="glyphicon glyphicon-refresh"></span>&nbsp;Refresh</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<footer id="footer-navigation" class="navbar navbar-inverse navbar-fixed-bottom">
+    <div class="container-fluid container-footer">
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-left">
+                <li>
+                    <a>
+                        <span>&copy; 2017 Bittrex, INC</span>
+                    </a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a>
+                        <span data-bind="text:menu.displayTotalBtc"></span>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <span data-bind="text:menu.displayTotalEth"></span>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <span data-bind="text:navigation.displayBitcoinUsd"></span>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <i class="fa fa-wifi" data-bind="css: { 'socket-status-normal': socket.connectionStatus() == 'Connected', 'socket-status-warning': socket.connectionStatus() == 'Slow' || socket.connectionStatus() == 'Reconnecting', 'socket-status-error': socket.connectionStatus() == 'Disconnected' }"></i>
+                        <span data-bind="text:socket.displayStatus"></span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</footer>

@@ -1,0 +1,63 @@
+﻿<section class="content-header">
+    <h1>
+        Chỉnh sửa nhóm người dùng
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#!/admin"><i class="fa fa-dashboard"></i> Trang chủ</a></li>
+        <li><a href="#!/application_groups">Danh sách nhóm người dùng</a></li>
+        <li class="active">Chỉnh sửa</li>
+    </ol>
+</section>
+<section class="content">
+    <div class="box box-info">
+        <div class="box-header with-border">
+            <h3 class="box-title">Chỉnh sửa</h3>
+        </div><!-- /.box-header -->
+        <!-- form start -->
+        <form class="form-horizontal" role="form" novalidate name="frmEditAppGroup" ng-submit="updateApplicationGroup()">
+            <div class="box-body">
+                <div class="form-group">
+                    <div class="col-sm-2"></div>
+                    <div class="col-sm-10">
+                        <ul style="list-style-type: none;">
+                            <li id="errorMessages" style="color: red;" data-ng-repeat="error in errors">{{error}}</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Tên danh mục</label>
+                    <div class="col-sm-10">
+                        <input type="text" autocomplete="off" ng-maxlength="256" required name="name" class="form-control" ng-model="appGroup.Name">
+                        <span ng-if="frmEditAppGroup.name.$touched">
+                            <span class="has-error" ng-show="frmEditAppGroup.name.$invalid">Phải nhập tên App group.</span>
+                            <span class="has-error" ng-show="frmEditAppGroup.name.$error.maxlength">Tên App group chỉ được 50 ký tự.</span>
+                            <span class="has-error" ng-show="hasValueInDb">Tên App group đã tồn tại.</span>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Mô tả</label>
+                    <div class="col-sm-10">
+                        <input type="text" autocomplete="off" ng-maxlength="256" required name="description" class="form-control" ng-model="appGroup.Description">
+                        <span ng-if="frmAddAppGroup.description.$touched">
+                            <span class="has-error" ng-show="frmAddAppGroup.description.$invalid">Phải nhập mô tả App group.</span>
+                            <span class="has-error" ng-show="frmAddAppGroup.description.$error.maxlength">Mô tả App group chỉ được 256 ký tự.</span>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <span ng-repeat="item in roles">
+                            <input type="checkbox" ng-model="item.selected"> {{item.Name}}
+                            <br />
+                        </span>
+                    </div>
+                </div>
+            </div><!-- /.box-body -->
+            <div class="box-footer">
+                <button ng-click="cancel()" class="btn btn-default">Hủy</button>
+                <button type="submit" ng-disabled="frmEditAppGroup.$invalid || hasValueInDb" class="btn btn-success pull-right">Lưu</button>
+            </div><!-- /.box-footer -->
+        </form>
+    </div><!-- /.box -->
+</section>

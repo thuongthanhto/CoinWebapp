@@ -1,0 +1,1871 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BCD67280-4AB3-4CC2-B5DF-D26B2F7209D6}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Coin.Web</RootNamespace>
+    <AssemblyName>Coin.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>1.8</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac, Version=4.6.1.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.4.6.1\lib\net45\Autofac.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Autofac.Integration.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.Mvc5.4.0.2\lib\net45\Autofac.Integration.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Autofac.Integration.WebApi, Version=4.1.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.WebApi2.4.1.0\lib\net45\Autofac.Integration.WebApi.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AutoMapper, Version=6.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.6.1.1\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Common.Logging, Version=3.3.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Common.Logging.3.3.1\lib\net40\Common.Logging.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Common.Logging.Core, Version=3.3.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Common.Logging.Core.3.3.1\lib\net40\Common.Logging.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Client, Version=2.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.Client.2.2.2\lib\net45\Microsoft.AspNet.SignalR.Client.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Core, Version=2.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.2.2.2\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Owin, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.Owin.1.2.2\lib\net45\Microsoft.AspNet.SignalR.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.SystemWeb, Version=2.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.SystemWeb.2.2.2\lib\net45\Microsoft.AspNet.SignalR.SystemWeb.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.3.1.0\lib\net45\Microsoft.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Cors, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Cors.3.1.0\lib\net45\Microsoft.Owin.Cors.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Quartz, Version=2.6.1.0, Culture=neutral, PublicKeyToken=f6b8c98a402cc8a4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Quartz.2.6.1\lib\net40\Quartz.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Cors, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Cors.5.2.3\lib\net45\System.Web.Cors.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http.Cors, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Cors.5.2.3\lib\net45\System.Web.Http.Cors.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.Owin, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Owin.5.2.3\lib\net45\System.Web.Http.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.3.0.1\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.0.1\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.0.1\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.0.1\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Api\ApplicationGroupController.cs" />
+    <Compile Include="Api\ApplicationRoleController.cs" />
+    <Compile Include="Api\ApplicationUserController.cs" />
+    <Compile Include="Api\HomeController.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="App_Start\Startup.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\Core\ApiControllerBase.cs" />
+    <Compile Include="Infrastructure\Core\PaginationSet.cs" />
+    <Compile Include="Infrastructure\Extensions\EntityExtensions.cs" />
+    <Compile Include="Mappings\AutoMapperConfiguration.cs" />
+    <Compile Include="Models\ApplicationGroupViewModel.cs" />
+    <Compile Include="Models\ApplicationRoleViewModel.cs" />
+    <Compile Include="Models\ApplicationUserViewModel.cs" />
+    <Compile Include="Models\Jobclass.cs" />
+    <Compile Include="Models\JobScheduler.cs" />
+    <Compile Include="Models\RecaptchaResponse.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SignalR\ChatHub.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="app\app.js" />
+    <Content Include="app\app.run.js" />
+    <Content Include="app\components\application_groups\applicationGroup.module.js" />
+    <Content Include="app\components\application_groups\applicationGroupAddController.js" />
+    <Content Include="app\components\application_groups\applicationGroupAddView.html" />
+    <Content Include="app\components\application_groups\applicationGroupEditController.js" />
+    <Content Include="app\components\application_groups\applicationGroupEditView.html" />
+    <Content Include="app\components\application_groups\applicationGroupListController.js" />
+    <Content Include="app\components\application_groups\applicationGroupListView.html" />
+    <Content Include="app\components\application_roles\applicationRole.module.js" />
+    <Content Include="app\components\application_roles\applicationRoleAddController.js" />
+    <Content Include="app\components\application_roles\applicationRoleAddView.html" />
+    <Content Include="app\components\application_roles\applicationRoleEditController.js" />
+    <Content Include="app\components\application_roles\applicationRoleEditView.html" />
+    <Content Include="app\components\application_roles\applicationRoleListController.js" />
+    <Content Include="app\components\application_roles\applicationRoleListView.html" />
+    <Content Include="app\components\application_users\applicationUser.module.js" />
+    <Content Include="app\components\application_users\applicationUserAddController.js" />
+    <Content Include="app\components\application_users\applicationUserAddView.html" />
+    <Content Include="app\components\application_users\applicationUserEditController.js" />
+    <Content Include="app\components\application_users\applicationUserEditView.html" />
+    <Content Include="app\components\application_users\applicationUserListController.js" />
+    <Content Include="app\components\application_users\applicationUserListView.html" />
+    <Content Include="app\components\fogot_password\fogotPasswordController.js" />
+    <Content Include="app\components\fogot_password\fogotPasswordView.html" />
+    <Content Include="app\components\home\homeController.js" />
+    <Content Include="app\components\home\homeView.html" />
+    <Content Include="app\components\home\rootController.js" />
+    <Content Include="app\components\login\loginController.js" />
+    <Content Include="app\components\login\loginView.html" />
+    <Content Include="app\components\register\registerController.js" />
+    <Content Include="app\components\register\registerView.html" />
+    <Content Include="app\shared\common\app.config.js" />
+    <Content Include="app\shared\common\func.js" />
+    <Content Include="app\shared\directives\asDateDirective.js" />
+    <Content Include="app\shared\directives\pagerDirective.html" />
+    <Content Include="app\shared\directives\pagerDirective.js" />
+    <Content Include="app\shared\filters\statusFilter.js" />
+    <Content Include="app\shared\modules\coin.common.js" />
+    <Content Include="app\shared\services\apiService.js" />
+    <Content Include="app\shared\services\authData.js" />
+    <Content Include="app\shared\services\authenticationService.js" />
+    <Content Include="app\shared\services\authorizationService.js" />
+    <Content Include="app\shared\services\commonService.js" />
+    <Content Include="app\shared\services\loginService.js" />
+    <Content Include="app\shared\services\notificationService.js" />
+    <Content Include="app\shared\template\controllerTemplate.js" />
+    <Content Include="app\shared\views\baseView.html" />
+    <Content Include="app\shared\views\sidebar.html" />
+    <Content Include="Assets\admin\css\bcore.css" />
+    <Content Include="Assets\admin\css\cryptocoins.css" />
+    <Content Include="Assets\admin\css\home.css" />
+    <Content Include="Assets\admin\css\layout.css" />
+    <Content Include="Assets\admin\css\signin.css" />
+    <Content Include="Assets\admin\css\style.css" />
+    <Content Include="Assets\admin\css\tpcore.css" />
+    <Content Include="Assets\admin\img\ajax-loader.gif" />
+    <Content Include="Assets\admin\img\bittrex-logo-white-no-tagline.png" />
+    <Content Include="Assets\admin\js\amcharts.js" />
+    <Content Include="Assets\admin\js\bittrexDataProvider.js" />
+    <Content Include="Assets\admin\js\bittrexViewModel.js" />
+    <Content Include="Assets\admin\js\jquery.jcarousel.min.js" />
+    <Content Include="Assets\admin\js\layoutDataProvider.js" />
+    <Content Include="Assets\admin\js\modernizr.js" />
+    <Content Include="Assets\admin\js\tpcore.js" />
+    <Content Include="Assets\admin\js\utility.js" />
+    <Content Include="Assets\admin\libs\angular-loading-bar\build\loading-bar.css" />
+    <Content Include="Assets\admin\libs\angular-loading-bar\build\loading-bar.js" />
+    <Content Include="Assets\admin\libs\angular-loading-bar\build\loading-bar.min.css" />
+    <Content Include="Assets\admin\libs\angular-loading-bar\build\loading-bar.min.js" />
+    <Content Include="Assets\admin\libs\angular-loading-bar\Gruntfile.js" />
+    <Content Include="Assets\admin\libs\angular-loading-bar\index.js" />
+    <Content Include="Assets\admin\libs\angular-loading-bar\src\loading-bar.css" />
+    <Content Include="Assets\admin\libs\angular-loading-bar\src\loading-bar.js" />
+    <Content Include="Assets\admin\libs\angular-local-storage\.gitattributes" />
+    <Content Include="Assets\admin\libs\angular-local-storage\.gitignore" />
+    <Content Include="Assets\admin\libs\angular-local-storage\demo\demo-app.js" />
+    <Content Include="Assets\admin\libs\angular-local-storage\demo\demo-style.css" />
+    <Content Include="Assets\admin\libs\angular-local-storage\demo\demo.html" />
+    <Content Include="Assets\admin\libs\angular-local-storage\dist\angular-local-storage.js" />
+    <Content Include="Assets\admin\libs\angular-local-storage\dist\angular-local-storage.min.js" />
+    <Content Include="Assets\admin\libs\angular-local-storage\index.js" />
+    <Content Include="Assets\admin\libs\angular-recaptcha\demo\angular-recaptcha.js" />
+    <Content Include="Assets\admin\libs\angular-recaptcha\demo\usage.html" />
+    <Content Include="Assets\admin\libs\angular-recaptcha\index.js" />
+    <Content Include="Assets\admin\libs\angular-recaptcha\karma.conf.js" />
+    <Content Include="Assets\admin\libs\angular-recaptcha\release\angular-recaptcha.js" />
+    <Content Include="Assets\admin\libs\angular-recaptcha\release\angular-recaptcha.min.js" />
+    <Content Include="Assets\admin\libs\angular-recaptcha\tests\directive_test.js" />
+    <Content Include="Assets\admin\libs\angular-recaptcha\tests\provider.driver.js" />
+    <Content Include="Assets\admin\libs\angular-recaptcha\tests\provider_test.js" />
+    <Content Include="Assets\admin\libs\angular-recaptcha\tests\service.driver.js" />
+    <Content Include="Assets\admin\libs\angular-recaptcha\tests\service_test.js" />
+    <Content Include="Assets\admin\libs\angular-ui-router\karma.conf.js" />
+    <Content Include="Assets\admin\libs\angular-ui-router\migrate\migratewarn.js" />
+    <Content Include="Assets\admin\libs\angular-ui-router\release\angular-ui-router.js" />
+    <Content Include="Assets\admin\libs\angular-ui-router\release\angular-ui-router.min.js" />
+    <Content Include="Assets\admin\libs\angular-ui-router\release\resolveService.js" />
+    <Content Include="Assets\admin\libs\angular-ui-router\release\resolveService.min.js" />
+    <Content Include="Assets\admin\libs\angular-ui-router\release\stateEvents.js" />
+    <Content Include="Assets\admin\libs\angular-ui-router\release\stateEvents.min.js" />
+    <Content Include="Assets\admin\libs\angular-ui-router\release\ui-router-angularjs.js" />
+    <Content Include="Assets\admin\libs\angular-ui-router\release\ui-router-angularjs.min.js" />
+    <Content Include="Assets\admin\libs\angular-ui-router\rollup.config.js" />
+    <Content Include="Assets\admin\libs\angular\angular-csp.css" />
+    <Content Include="Assets\admin\libs\angular\angular.js" />
+    <Content Include="Assets\admin\libs\angular\angular.min.js" />
+    <Content Include="Assets\admin\libs\angular\index.js" />
+    <Content Include="Assets\admin\libs\bootbox\.gitignore" />
+    <Content Include="Assets\admin\libs\bootbox\bootbox.js" />
+    <Content Include="Assets\admin\libs\bootstrap\dist\css\bootstrap-theme.css" />
+    <Content Include="Assets\admin\libs\bootstrap\dist\css\bootstrap-theme.min.css" />
+    <Content Include="Assets\admin\libs\bootstrap\dist\css\bootstrap.css" />
+    <Content Include="Assets\admin\libs\bootstrap\dist\css\bootstrap.min.css" />
+    <Content Include="Assets\admin\libs\bootstrap\dist\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Assets\admin\libs\bootstrap\dist\js\bootstrap.js" />
+    <Content Include="Assets\admin\libs\bootstrap\dist\js\bootstrap.min.js" />
+    <Content Include="Assets\admin\libs\bootstrap\dist\js\npm.js" />
+    <Content Include="Assets\admin\libs\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Assets\admin\libs\bootstrap\Gruntfile.js" />
+    <Content Include="Assets\admin\libs\bootstrap\grunt\bs-commonjs-generator.js" />
+    <Content Include="Assets\admin\libs\bootstrap\grunt\bs-glyphicons-data-generator.js" />
+    <Content Include="Assets\admin\libs\bootstrap\grunt\bs-lessdoc-parser.js" />
+    <Content Include="Assets\admin\libs\bootstrap\grunt\bs-raw-files-generator.js" />
+    <Content Include="Assets\admin\libs\bootstrap\grunt\change-version.js" />
+    <Content Include="Assets\admin\libs\bootstrap\js\affix.js" />
+    <Content Include="Assets\admin\libs\bootstrap\js\alert.js" />
+    <Content Include="Assets\admin\libs\bootstrap\js\button.js" />
+    <Content Include="Assets\admin\libs\bootstrap\js\carousel.js" />
+    <Content Include="Assets\admin\libs\bootstrap\js\collapse.js" />
+    <Content Include="Assets\admin\libs\bootstrap\js\dropdown.js" />
+    <Content Include="Assets\admin\libs\bootstrap\js\modal.js" />
+    <Content Include="Assets\admin\libs\bootstrap\js\popover.js" />
+    <Content Include="Assets\admin\libs\bootstrap\js\scrollspy.js" />
+    <Content Include="Assets\admin\libs\bootstrap\js\tab.js" />
+    <Content Include="Assets\admin\libs\bootstrap\js\tooltip.js" />
+    <Content Include="Assets\admin\libs\bootstrap\js\transition.js" />
+    <Content Include="Assets\admin\libs\bootstrap\package.js" />
+    <Content Include="Assets\admin\libs\jquery\AUTHORS.txt" />
+    <Content Include="Assets\admin\libs\jquery\dist\jquery.js" />
+    <Content Include="Assets\admin\libs\jquery\dist\jquery.min.js" />
+    <Content Include="Assets\admin\libs\jquery\external\sizzle\dist\sizzle.js" />
+    <Content Include="Assets\admin\libs\jquery\external\sizzle\dist\sizzle.min.js" />
+    <Content Include="Assets\admin\libs\jquery\external\sizzle\LICENSE.txt" />
+    <Content Include="Assets\admin\libs\jquery\LICENSE.txt" />
+    <Content Include="Assets\admin\libs\jquery\src\ajax.js" />
+    <Content Include="Assets\admin\libs\jquery\src\ajax\jsonp.js" />
+    <Content Include="Assets\admin\libs\jquery\src\ajax\load.js" />
+    <Content Include="Assets\admin\libs\jquery\src\ajax\parseJSON.js" />
+    <Content Include="Assets\admin\libs\jquery\src\ajax\parseXML.js" />
+    <Content Include="Assets\admin\libs\jquery\src\ajax\script.js" />
+    <Content Include="Assets\admin\libs\jquery\src\ajax\var\location.js" />
+    <Content Include="Assets\admin\libs\jquery\src\ajax\var\nonce.js" />
+    <Content Include="Assets\admin\libs\jquery\src\ajax\var\rquery.js" />
+    <Content Include="Assets\admin\libs\jquery\src\ajax\xhr.js" />
+    <Content Include="Assets\admin\libs\jquery\src\attributes.js" />
+    <Content Include="Assets\admin\libs\jquery\src\attributes\attr.js" />
+    <Content Include="Assets\admin\libs\jquery\src\attributes\classes.js" />
+    <Content Include="Assets\admin\libs\jquery\src\attributes\prop.js" />
+    <Content Include="Assets\admin\libs\jquery\src\attributes\support.js" />
+    <Content Include="Assets\admin\libs\jquery\src\attributes\val.js" />
+    <Content Include="Assets\admin\libs\jquery\src\callbacks.js" />
+    <Content Include="Assets\admin\libs\jquery\src\core.js" />
+    <Content Include="Assets\admin\libs\jquery\src\core\access.js" />
+    <Content Include="Assets\admin\libs\jquery\src\core\init.js" />
+    <Content Include="Assets\admin\libs\jquery\src\core\parseHTML.js" />
+    <Content Include="Assets\admin\libs\jquery\src\core\ready.js" />
+    <Content Include="Assets\admin\libs\jquery\src\core\var\rsingleTag.js" />
+    <Content Include="Assets\admin\libs\jquery\src\css.js" />
+    <Content Include="Assets\admin\libs\jquery\src\css\addGetHookIf.js" />
+    <Content Include="Assets\admin\libs\jquery\src\css\adjustCSS.js" />
+    <Content Include="Assets\admin\libs\jquery\src\css\curCSS.js" />
+    <Content Include="Assets\admin\libs\jquery\src\css\defaultDisplay.js" />
+    <Content Include="Assets\admin\libs\jquery\src\css\hiddenVisibleSelectors.js" />
+    <Content Include="Assets\admin\libs\jquery\src\css\showHide.js" />
+    <Content Include="Assets\admin\libs\jquery\src\css\support.js" />
+    <Content Include="Assets\admin\libs\jquery\src\css\var\cssExpand.js" />
+    <Content Include="Assets\admin\libs\jquery\src\css\var\getStyles.js" />
+    <Content Include="Assets\admin\libs\jquery\src\css\var\isHidden.js" />
+    <Content Include="Assets\admin\libs\jquery\src\css\var\rmargin.js" />
+    <Content Include="Assets\admin\libs\jquery\src\css\var\rnumnonpx.js" />
+    <Content Include="Assets\admin\libs\jquery\src\css\var\swap.js" />
+    <Content Include="Assets\admin\libs\jquery\src\data.js" />
+    <Content Include="Assets\admin\libs\jquery\src\data\Data.js" />
+    <Content Include="Assets\admin\libs\jquery\src\data\var\acceptData.js" />
+    <Content Include="Assets\admin\libs\jquery\src\data\var\dataPriv.js" />
+    <Content Include="Assets\admin\libs\jquery\src\data\var\dataUser.js" />
+    <Content Include="Assets\admin\libs\jquery\src\deferred.js" />
+    <Content Include="Assets\admin\libs\jquery\src\deprecated.js" />
+    <Content Include="Assets\admin\libs\jquery\src\dimensions.js" />
+    <Content Include="Assets\admin\libs\jquery\src\effects.js" />
+    <Content Include="Assets\admin\libs\jquery\src\effects\animatedSelector.js" />
+    <Content Include="Assets\admin\libs\jquery\src\effects\Tween.js" />
+    <Content Include="Assets\admin\libs\jquery\src\event.js" />
+    <Content Include="Assets\admin\libs\jquery\src\event\ajax.js" />
+    <Content Include="Assets\admin\libs\jquery\src\event\alias.js" />
+    <Content Include="Assets\admin\libs\jquery\src\event\focusin.js" />
+    <Content Include="Assets\admin\libs\jquery\src\event\support.js" />
+    <Content Include="Assets\admin\libs\jquery\src\event\trigger.js" />
+    <Content Include="Assets\admin\libs\jquery\src\exports\amd.js" />
+    <Content Include="Assets\admin\libs\jquery\src\exports\global.js" />
+    <Content Include="Assets\admin\libs\jquery\src\intro.js" />
+    <Content Include="Assets\admin\libs\jquery\src\jquery.js" />
+    <Content Include="Assets\admin\libs\jquery\src\manipulation.js" />
+    <Content Include="Assets\admin\libs\jquery\src\manipulation\buildFragment.js" />
+    <Content Include="Assets\admin\libs\jquery\src\manipulation\getAll.js" />
+    <Content Include="Assets\admin\libs\jquery\src\manipulation\setGlobalEval.js" />
+    <Content Include="Assets\admin\libs\jquery\src\manipulation\support.js" />
+    <Content Include="Assets\admin\libs\jquery\src\manipulation\var\rcheckableType.js" />
+    <Content Include="Assets\admin\libs\jquery\src\manipulation\var\rscriptType.js" />
+    <Content Include="Assets\admin\libs\jquery\src\manipulation\var\rtagName.js" />
+    <Content Include="Assets\admin\libs\jquery\src\manipulation\wrapMap.js" />
+    <Content Include="Assets\admin\libs\jquery\src\manipulation\_evalUrl.js" />
+    <Content Include="Assets\admin\libs\jquery\src\offset.js" />
+    <Content Include="Assets\admin\libs\jquery\src\outro.js" />
+    <Content Include="Assets\admin\libs\jquery\src\queue.js" />
+    <Content Include="Assets\admin\libs\jquery\src\queue\delay.js" />
+    <Content Include="Assets\admin\libs\jquery\src\selector-native.js" />
+    <Content Include="Assets\admin\libs\jquery\src\selector-sizzle.js" />
+    <Content Include="Assets\admin\libs\jquery\src\selector.js" />
+    <Content Include="Assets\admin\libs\jquery\src\serialize.js" />
+    <Content Include="Assets\admin\libs\jquery\src\traversing.js" />
+    <Content Include="Assets\admin\libs\jquery\src\traversing\findFilter.js" />
+    <Content Include="Assets\admin\libs\jquery\src\traversing\var\dir.js" />
+    <Content Include="Assets\admin\libs\jquery\src\traversing\var\rneedsContext.js" />
+    <Content Include="Assets\admin\libs\jquery\src\traversing\var\siblings.js" />
+    <Content Include="Assets\admin\libs\jquery\src\var\arr.js" />
+    <Content Include="Assets\admin\libs\jquery\src\var\class2type.js" />
+    <Content Include="Assets\admin\libs\jquery\src\var\concat.js" />
+    <Content Include="Assets\admin\libs\jquery\src\var\document.js" />
+    <Content Include="Assets\admin\libs\jquery\src\var\documentElement.js" />
+    <Content Include="Assets\admin\libs\jquery\src\var\hasOwn.js" />
+    <Content Include="Assets\admin\libs\jquery\src\var\indexOf.js" />
+    <Content Include="Assets\admin\libs\jquery\src\var\pnum.js" />
+    <Content Include="Assets\admin\libs\jquery\src\var\push.js" />
+    <Content Include="Assets\admin\libs\jquery\src\var\rcssNum.js" />
+    <Content Include="Assets\admin\libs\jquery\src\var\rnotwhite.js" />
+    <Content Include="Assets\admin\libs\jquery\src\var\slice.js" />
+    <Content Include="Assets\admin\libs\jquery\src\var\support.js" />
+    <Content Include="Assets\admin\libs\jquery\src\var\toString.js" />
+    <Content Include="Assets\admin\libs\jquery\src\wrap.js" />
+    <Content Include="Assets\admin\libs\mathjs\benchmark\algebra.js" />
+    <Content Include="Assets\admin\libs\mathjs\benchmark\expression_parser.js" />
+    <Content Include="Assets\admin\libs\mathjs\benchmark\index.js" />
+    <Content Include="Assets\admin\libs\mathjs\benchmark\matrix_operations.js" />
+    <Content Include="Assets\admin\libs\mathjs\benchmark\matrix_operations_results.txt" />
+    <Content Include="Assets\admin\libs\mathjs\bin\cli.js" />
+    <Content Include="Assets\admin\libs\mathjs\bin\repl.js" />
+    <Content Include="Assets\admin\libs\mathjs\core.js" />
+    <Content Include="Assets\admin\libs\mathjs\dist\math.js" />
+    <Content Include="Assets\admin\libs\mathjs\dist\math.min.js" />
+    <Content Include="Assets\admin\libs\mathjs\examples\advanced\add_new_datatypes\index.js" />
+    <Content Include="Assets\admin\libs\mathjs\examples\advanced\add_new_datatypes\myAdd.js" />
+    <Content Include="Assets\admin\libs\mathjs\examples\advanced\add_new_datatypes\MyType.js" />
+    <Content Include="Assets\admin\libs\mathjs\examples\advanced\convert_fraction_to_bignumber.js" />
+    <Content Include="Assets\admin\libs\mathjs\examples\advanced\custom_argument_parsing.js" />
+    <Content Include="Assets\admin\libs\mathjs\examples\advanced\custom_loading.js" />
+    <Content Include="Assets\admin\libs\mathjs\examples\advanced\expression_trees.js" />
+    <Content Include="Assets\admin\libs\mathjs\examples\advanced\function_transform.js" />
+    <Content Include="Assets\admin\libs\mathjs\examples\advanced\more_secure_eval.js" />
+    <Content Include="Assets\admin\libs\mathjs\examples\advanced\web_server\math_worker.js" />
+    <Content Include="Assets\admin\libs\mathjs\examples\advanced\web_server\server.js" />
+    <Content Include="Assets\admin\libs\mathjs\examples\algebra.js" />
+    <Content Include="Assets\admin\libs\mathjs\examples\basic_usage.js" />
+    <Content Include="Assets\admin\libs\mathjs\examples\bignumbers.js" />
+    <Content Include="Assets\admin\libs\mathjs\examples\browser\angle_configuration.html" />
+    <Content Include="Assets\admin\libs\mathjs\examples\browser\basic_usage.html" />
+    <Content Include="Assets\admin\libs\mathjs\examples\browser\currency_conversion.html" />
+    <Content Include="Assets\admin\libs\mathjs\examples\browser\custom_separators.html" />
+    <Content Include="Assets\admin\libs\mathjs\examples\browser\old_browsers.html" />
+    <Content Include="Assets\admin\libs\mathjs\examples\browser\plot.html" />
+    <Content Include="Assets\admin\libs\mathjs\examples\browser\pretty_printing_with_mathjax.html" />
+    <Content Include="Assets\admin\libs\mathjs\examples\browser\printing_html.html" />
+    <Content Include="Assets\admin\libs\mathjs\examples\browser\requirejs_loading.html" />
+    <Content Include="Assets\admin\libs\mathjs\examples\browser\rocket_trajectory_optimization.html" />
+    <Content Include="Assets\admin\libs\mathjs\examples\browser\webworkers\webworkers.html" />
+    <Content Include="Assets\admin\libs\mathjs\examples\browser\webworkers\worker.js" />
+    <Content Include="Assets\admin\libs\mathjs\examples\chaining.js" />
+    <Content Include="Assets\admin\libs\mathjs\examples\complex_numbers.js" />
+    <Content Include="Assets\admin\libs\mathjs\examples\expressions.js" />
+    <Content Include="Assets\admin\libs\mathjs\examples\fractions.js" />
+    <Content Include="Assets\admin\libs\mathjs\examples\import.js" />
+    <Content Include="Assets\admin\libs\mathjs\examples\matrices.js" />
+    <Content Include="Assets\admin\libs\mathjs\examples\objects.js" />
+    <Content Include="Assets\admin\libs\mathjs\examples\serialization.js" />
+    <Content Include="Assets\admin\libs\mathjs\examples\sparse_matrices.js" />
+    <Content Include="Assets\admin\libs\mathjs\examples\units.js" />
+    <Content Include="Assets\admin\libs\mathjs\index.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\constants.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\core\core.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\core\function\config.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\core\function\import.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\core\function\typed.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\core\typed.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\error\ArgumentsError.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\error\DimensionError.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\error\index.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\error\IndexError.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\constants\e.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\constants\false.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\constants\i.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\constants\Infinity.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\constants\LN10.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\constants\LN2.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\constants\LOG10E.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\constants\LOG2E.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\constants\NaN.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\constants\null.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\constants\phi.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\constants\pi.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\constants\SQRT1_2.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\constants\SQRT2.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\constants\tau.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\constants\true.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\constants\version.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\construction\bignumber.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\construction\boolean.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\construction\complex.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\construction\createUnit.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\construction\fraction.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\construction\index.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\construction\matrix.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\construction\number.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\construction\sparse.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\construction\splitUnit.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\construction\string.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\construction\unit.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\core\config.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\core\import.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\core\typed.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\algebra\derivative.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\algebra\lsolve.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\algebra\lup.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\algebra\lusolve.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\algebra\qr.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\algebra\simplify.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\algebra\slu.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\algebra\usolve.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\arithmetic\abs.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\arithmetic\add.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\arithmetic\cbrt.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\arithmetic\ceil.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\arithmetic\cube.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\arithmetic\divide.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\arithmetic\dotDivide.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\arithmetic\dotMultiply.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\arithmetic\dotPow.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\arithmetic\exp.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\arithmetic\fix.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\arithmetic\floor.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\arithmetic\gcd.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\arithmetic\hypot.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\arithmetic\lcm.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\arithmetic\log.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\arithmetic\log10.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\arithmetic\mod.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\arithmetic\multiply.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\arithmetic\norm.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\arithmetic\nthRoot.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\arithmetic\pow.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\arithmetic\round.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\arithmetic\sign.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\arithmetic\sqrt.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\arithmetic\square.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\arithmetic\subtract.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\arithmetic\unaryMinus.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\arithmetic\unaryPlus.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\arithmetic\xgcd.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\bitwise\bitAnd.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\bitwise\bitNot.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\bitwise\bitOr.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\bitwise\bitXor.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\bitwise\leftShift.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\bitwise\rightArithShift.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\bitwise\rightLogShift.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\combinatorics\bellNumbers.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\combinatorics\catalan.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\combinatorics\composition.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\combinatorics\stirlingS2.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\complex\arg.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\complex\conj.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\complex\im.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\complex\re.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\expression\eval.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\expression\help.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\geometry\distance.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\geometry\intersect.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\logical\and.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\logical\not.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\logical\or.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\logical\xor.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\matrix\concat.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\matrix\cross.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\matrix\det.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\matrix\diag.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\matrix\dot.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\matrix\eye.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\matrix\filter.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\matrix\flatten.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\matrix\forEach.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\matrix\inv.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\matrix\kron.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\matrix\map.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\matrix\ones.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\matrix\partitionSelect.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\matrix\range.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\matrix\reshape.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\matrix\resize.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\matrix\size.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\matrix\sort.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\matrix\squeeze.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\matrix\subset.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\matrix\trace.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\matrix\transpose.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\matrix\zeros.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\probability\combinations.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\probability\distribution.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\probability\factorial.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\probability\gamma.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\probability\kldivergence.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\probability\multinomial.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\probability\permutations.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\probability\pickRandom.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\probability\random.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\probability\randomInt.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\relational\compare.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\relational\compareNatural.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\relational\deepEqual.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\relational\equal.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\relational\larger.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\relational\largerEq.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\relational\smaller.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\relational\smallerEq.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\relational\unequal.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\set\setCartesian.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\set\setDifference.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\set\setDistinct.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\set\setIntersect.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\set\setIsSubset.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\set\setMultiplicity.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\set\setPowerset.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\set\setSize.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\set\setSymDifference.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\set\setUnion.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\special\erf.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\statistics\mad.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\statistics\max.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\statistics\mean.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\statistics\median.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\statistics\min.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\statistics\mode.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\statistics\prod.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\statistics\quantileSeq.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\statistics\std.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\statistics\sum.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\statistics\var.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\trigonometry\acos.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\trigonometry\acosh.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\trigonometry\acot.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\trigonometry\acoth.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\trigonometry\acsc.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\trigonometry\acsch.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\trigonometry\asec.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\trigonometry\asech.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\trigonometry\asin.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\trigonometry\asinh.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\trigonometry\atan.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\trigonometry\atan2.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\trigonometry\atanh.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\trigonometry\cos.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\trigonometry\cosh.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\trigonometry\cot.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\trigonometry\coth.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\trigonometry\csc.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\trigonometry\csch.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\trigonometry\sec.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\trigonometry\sech.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\trigonometry\sin.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\trigonometry\sinh.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\trigonometry\tan.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\trigonometry\tanh.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\units\to.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\utils\clone.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\utils\format.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\utils\isInteger.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\utils\isNaN.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\utils\isNegative.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\utils\isNumeric.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\utils\isPositive.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\utils\isPrime.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\utils\isZero.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\utils\print.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\function\utils\typeof.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\docs\index.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\function\compile.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\function\eval.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\function\help.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\function\index.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\function\parse.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\function\parser.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\Help.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\index.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\keywords.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\node\AccessorNode.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\node\ArrayNode.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\node\AssignmentNode.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\node\BlockNode.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\node\compile.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\node\ConditionalNode.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\node\ConstantNode.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\node\FunctionAssignmentNode.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\node\FunctionNode.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\node\index.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\node\IndexNode.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\node\Node.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\node\ObjectNode.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\node\OperatorNode.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\node\ParenthesisNode.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\node\RangeNode.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\node\SymbolNode.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\node\UpdateNode.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\node\utils\access.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\node\utils\assign.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\node\utils\getUniqueArgumentName.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\operators.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\parse.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\Parser.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\transform\concat.transform.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\transform\error.transform.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\transform\filter.transform.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\transform\forEach.transform.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\transform\index.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\transform\index.transform.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\transform\map.transform.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\transform\max.transform.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\transform\mean.transform.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\transform\min.transform.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\transform\range.transform.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\transform\subset.transform.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\expression\transform\utils\compileInlineExpression.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\algebra\decomposition\lup.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\algebra\decomposition\qr.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\algebra\decomposition\slu.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\algebra\derivative.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\algebra\index.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\algebra\simplify.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\algebra\simplify\resolve.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\algebra\simplify\simplifyConstant.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\algebra\simplify\simplifyCore.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\algebra\simplify\util.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\algebra\solver\lsolve.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\algebra\solver\lusolve.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\algebra\solver\usolve.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\algebra\solver\utils\solveValidation.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\algebra\sparse\cs_amd.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\algebra\sparse\cs_chol.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\algebra\sparse\cs_counts.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\algebra\sparse\cs_cumsum.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\algebra\sparse\cs_dfs.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\algebra\sparse\cs_ereach.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\algebra\sparse\cs_etree.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\algebra\sparse\cs_fkeep.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\algebra\sparse\cs_flip.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\algebra\sparse\cs_ipvec.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\algebra\sparse\cs_leaf.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\algebra\sparse\cs_lu.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\algebra\sparse\cs_mark.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\algebra\sparse\cs_marked.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\algebra\sparse\cs_permute.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\algebra\sparse\cs_post.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\algebra\sparse\cs_reach.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\algebra\sparse\cs_spsolve.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\algebra\sparse\cs_sqr.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\algebra\sparse\cs_symperm.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\algebra\sparse\cs_tdfs.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\algebra\sparse\cs_unflip.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\arithmetic\abs.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\arithmetic\add.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\arithmetic\addScalar.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\arithmetic\cbrt.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\arithmetic\ceil.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\arithmetic\cube.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\arithmetic\divide.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\arithmetic\divideScalar.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\arithmetic\dotDivide.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\arithmetic\dotMultiply.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\arithmetic\dotPow.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\arithmetic\exp.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\arithmetic\fix.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\arithmetic\floor.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\arithmetic\gcd.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\arithmetic\hypot.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\arithmetic\index.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\arithmetic\lcm.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\arithmetic\log.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\arithmetic\log10.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\arithmetic\mod.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\arithmetic\multiply.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\arithmetic\multiplyScalar.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\arithmetic\norm.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\arithmetic\nthRoot.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\arithmetic\pow.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\arithmetic\round.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\arithmetic\sign.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\arithmetic\sqrt.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\arithmetic\square.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\arithmetic\subtract.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\arithmetic\unaryMinus.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\arithmetic\unaryPlus.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\arithmetic\xgcd.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\bitwise\bitAnd.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\bitwise\bitNot.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\bitwise\bitOr.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\bitwise\bitXor.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\bitwise\index.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\bitwise\leftShift.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\bitwise\rightArithShift.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\bitwise\rightLogShift.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\combinatorics\bellNumbers.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\combinatorics\catalan.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\combinatorics\composition.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\combinatorics\index.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\combinatorics\stirlingS2.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\complex\arg.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\complex\conj.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\complex\im.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\complex\index.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\complex\re.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\geometry\distance.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\geometry\index.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\geometry\intersect.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\index.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\logical\and.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\logical\index.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\logical\not.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\logical\or.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\logical\xor.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\matrix\concat.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\matrix\cross.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\matrix\det.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\matrix\diag.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\matrix\dot.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\matrix\eye.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\matrix\filter.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\matrix\flatten.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\matrix\forEach.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\matrix\index.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\matrix\inv.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\matrix\kron.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\matrix\map.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\matrix\ones.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\matrix\partitionSelect.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\matrix\range.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\matrix\reshape.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\matrix\resize.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\matrix\size.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\matrix\sort.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\matrix\squeeze.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\matrix\subset.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\matrix\trace.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\matrix\transpose.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\matrix\zeros.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\probability\combinations.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\probability\distribution.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\probability\factorial.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\probability\gamma.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\probability\index.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\probability\kldivergence.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\probability\multinomial.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\probability\permutations.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\probability\pickRandom.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\probability\random.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\probability\randomInt.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\probability\seededRNG.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\relational\compare.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\relational\compareNatural.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\relational\deepEqual.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\relational\equal.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\relational\equalScalar.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\relational\index.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\relational\larger.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\relational\largerEq.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\relational\smaller.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\relational\smallerEq.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\relational\unequal.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\set\index.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\set\setCartesian.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\set\setDifference.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\set\setDistinct.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\set\setIntersect.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\set\setIsSubset.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\set\setMultiplicity.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\set\setPowerset.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\set\setSize.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\set\setSymDifference.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\set\setUnion.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\special\erf.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\special\index.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\statistics\index.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\statistics\mad.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\statistics\max.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\statistics\mean.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\statistics\median.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\statistics\min.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\statistics\mode.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\statistics\prod.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\statistics\quantileSeq.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\statistics\std.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\statistics\sum.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\statistics\var.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\string\format.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\string\index.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\string\print.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\trigonometry\acos.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\trigonometry\acosh.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\trigonometry\acot.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\trigonometry\acoth.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\trigonometry\acsc.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\trigonometry\acsch.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\trigonometry\asec.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\trigonometry\asech.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\trigonometry\asin.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\trigonometry\asinh.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\trigonometry\atan.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\trigonometry\atan2.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\trigonometry\atanh.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\trigonometry\cos.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\trigonometry\cosh.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\trigonometry\cot.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\trigonometry\coth.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\trigonometry\csc.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\trigonometry\csch.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\trigonometry\index.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\trigonometry\sec.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\trigonometry\sech.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\trigonometry\sin.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\trigonometry\sinh.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\trigonometry\tan.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\trigonometry\tanh.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\unit\index.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\unit\to.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\utils\clone.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\utils\index.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\utils\isInteger.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\utils\isNaN.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\utils\isNegative.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\utils\isNumeric.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\utils\isPositive.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\utils\isPrime.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\utils\isZero.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\function\utils\typeof.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\header.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\index.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\json\index.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\json\reviver.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\type\bignumber\BigNumber.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\type\bignumber\function\bignumber.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\type\bignumber\index.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\type\boolean.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\type\chain\Chain.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\type\chain\function\chain.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\type\chain\index.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\type\complex\Complex.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\type\complex\function\complex.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\type\complex\index.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\type\fraction\Fraction.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\type\fraction\function\fraction.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\type\fraction\index.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\type\index.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\type\matrix\DenseMatrix.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\type\matrix\FibonacciHeap.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\type\matrix\function\index.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\type\matrix\function\matrix.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\type\matrix\function\sparse.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\type\matrix\ImmutableDenseMatrix.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\type\matrix\index.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\type\matrix\Matrix.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\type\matrix\MatrixIndex.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\type\matrix\Range.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\type\matrix\Spa.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\type\matrix\SparseMatrix.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\type\matrix\utils\algorithm01.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\type\matrix\utils\algorithm02.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\type\matrix\utils\algorithm03.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\type\matrix\utils\algorithm04.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\type\matrix\utils\algorithm05.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\type\matrix\utils\algorithm06.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\type\matrix\utils\algorithm07.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\type\matrix\utils\algorithm08.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\type\matrix\utils\algorithm09.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\type\matrix\utils\algorithm10.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\type\matrix\utils\algorithm11.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\type\matrix\utils\algorithm12.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\type\matrix\utils\algorithm13.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\type\matrix\utils\algorithm14.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\type\number.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\type\resultset\index.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\type\resultset\ResultSet.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\type\string.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\type\unit\function\createUnit.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\type\unit\function\splitUnit.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\type\unit\function\unit.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\type\unit\index.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\type\unit\physicalConstants.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\type\unit\Unit.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\utils\array.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\utils\bignumber\bitAnd.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\utils\bignumber\bitNot.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\utils\bignumber\bitOr.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\utils\bignumber\bitwise.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\utils\bignumber\bitXor.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\utils\bignumber\constants.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\utils\bignumber\formatter.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\utils\bignumber\isBigNumber.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\utils\bignumber\leftShift.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\utils\bignumber\nearlyEqual.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\utils\bignumber\rightArithShift.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\utils\boolean.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\utils\collection\containsCollections.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\utils\collection\deepForEach.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\utils\collection\deepMap.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\utils\collection\isCollection.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\utils\collection\isMatrix.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\utils\collection\reduce.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\utils\collection\scatter.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\utils\customs.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\utils\emitter.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\utils\function.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\utils\index.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\utils\latex.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\utils\number.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\utils\object.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\utils\string.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\utils\types.js" />
+    <Content Include="Assets\admin\libs\mathjs\lib\version.js" />
+    <Content Include="Assets\admin\libs\ng-table\.gitignore" />
+    <Content Include="Assets\admin\libs\ng-table\changelog.js" />
+    <Content Include="Assets\admin\libs\ng-table\demo-site\app\app.js" />
+    <Content Include="Assets\admin\libs\ng-table\demo-site\css\docs.css" />
+    <Content Include="Assets\admin\libs\ng-table\demo-site\css\social.css" />
+    <Content Include="Assets\admin\libs\ng-table\demo-site\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Assets\admin\libs\ng-table\demo-site\index.html" />
+    <Content Include="Assets\admin\libs\ng-table\demo-site\js\angular-social.js" />
+    <Content Include="Assets\admin\libs\ng-table\demo-site\js\embed-codepen.min.js" />
+    <Content Include="Assets\admin\libs\ng-table\demo-site\js\embed-codepen.version.txt" />
+    <Content Include="Assets\admin\libs\ng-table\demo-site\views\columns\demo-reordering.html" />
+    <Content Include="Assets\admin\libs\ng-table\demo-site\views\columns\demo-visibility.html" />
+    <Content Include="Assets\admin\libs\ng-table\demo-site\views\editing\demo-batch.html" />
+    <Content Include="Assets\admin\libs\ng-table\demo-site\views\editing\demo-inline.html" />
+    <Content Include="Assets\admin\libs\ng-table\demo-site\views\events\demo-subscribe.html" />
+    <Content Include="Assets\admin\libs\ng-table\demo-site\views\events\demo-unsubscribe.html" />
+    <Content Include="Assets\admin\libs\ng-table\demo-site\views\filtering\demo-api.html" />
+    <Content Include="Assets\admin\libs\ng-table\demo-site\views\filtering\demo-custom-template.html" />
+    <Content Include="Assets\admin\libs\ng-table\demo-site\views\filtering\demo-customize-algorithm.html" />
+    <Content Include="Assets\admin\libs\ng-table\demo-site\views\filtering\demo-enabling.html" />
+    <Content Include="Assets\admin\libs\ng-table\demo-site\views\filtering\demo-filtering-basic.html" />
+    <Content Include="Assets\admin\libs\ng-table\demo-site\views\filtering\demo-multi-template.html" />
+    <Content Include="Assets\admin\libs\ng-table\demo-site\views\filtering\demo-nested-property.html" />
+    <Content Include="Assets\admin\libs\ng-table\demo-site\views\filtering\demo-select.html" />
+    <Content Include="Assets\admin\libs\ng-table\demo-site\views\formatting\demo-cell-values.html" />
+    <Content Include="Assets\admin\libs\ng-table\demo-site\views\formatting\demo-custom-header.html" />
+    <Content Include="Assets\admin\libs\ng-table\demo-site\views\formatting\demo-dynamic-html-values.html" />
+    <Content Include="Assets\admin\libs\ng-table\demo-site\views\formatting\demo-dynamic-js-values.html" />
+    <Content Include="Assets\admin\libs\ng-table\demo-site\views\formatting\demo-header-cell-basic.html" />
+    <Content Include="Assets\admin\libs\ng-table\demo-site\views\formatting\demo-header-cell-full.html" />
+    <Content Include="Assets\admin\libs\ng-table\demo-site\views\formatting\demo-row.html" />
+    <Content Include="Assets\admin\libs\ng-table\demo-site\views\global-customization\demo-defaults.html" />
+    <Content Include="Assets\admin\libs\ng-table\demo-site\views\global-customization\demo-response-interceptors.html" />
+    <Content Include="Assets\admin\libs\ng-table\demo-site\views\grouping\demo-api.html" />
+    <Content Include="Assets\admin\libs\ng-table\demo-site\views\grouping\demo-enabling.html" />
+    <Content Include="Assets\admin\libs\ng-table\demo-site\views\grouping\demo-grouping-basic.html" />
+    <Content Include="Assets\admin\libs\ng-table\demo-site\views\grouping\demo-grouping-fn.html" />
+    <Content Include="Assets\admin\libs\ng-table\demo-site\views\grouping\demo-summary.html" />
+    <Content Include="Assets\admin\libs\ng-table\demo-site\views\intro\demo-real-world.html" />
+    <Content Include="Assets\admin\libs\ng-table\demo-site\views\intro\overview.html" />
+    <Content Include="Assets\admin\libs\ng-table\demo-site\views\loading\demo-external-array.html" />
+    <Content Include="Assets\admin\libs\ng-table\demo-site\views\loading\demo-lazy-loaded.html" />
+    <Content Include="Assets\admin\libs\ng-table\demo-site\views\loading\demo-managed-array.html" />
+    <Content Include="Assets\admin\libs\ng-table\demo-site\views\loading\overview.html" />
+    <Content Include="Assets\admin\libs\ng-table\demo-site\views\pagination\demo-api.html" />
+    <Content Include="Assets\admin\libs\ng-table\demo-site\views\pagination\demo-pager-basic.html" />
+    <Content Include="Assets\admin\libs\ng-table\demo-site\views\sorting\demo-api.html" />
+    <Content Include="Assets\admin\libs\ng-table\demo-site\views\sorting\demo-enabling.html" />
+    <Content Include="Assets\admin\libs\ng-table\demo-site\views\sorting\demo-sorting-basic.html" />
+    <Content Include="Assets\admin\libs\ng-table\demo-site\views\todo.html" />
+    <Content Include="Assets\admin\libs\ng-table\dist\ng-table.css" />
+    <Content Include="Assets\admin\libs\ng-table\dist\ng-table.js" />
+    <Content Include="Assets\admin\libs\ng-table\dist\ng-table.min.css" />
+    <Content Include="Assets\admin\libs\ng-table\dist\ng-table.min.js" />
+    <Content Include="Assets\admin\libs\ng-table\docs\app\css\app.css" />
+    <Content Include="Assets\admin\libs\ng-table\docs\app\js\app.js" />
+    <Content Include="Assets\admin\libs\ng-table\docs\app\vendor\angular-animate\angular-animate.js" />
+    <Content Include="Assets\admin\libs\ng-table\docs\app\vendor\angular-animate\angular-animate.min.js" />
+    <Content Include="Assets\admin\libs\ng-table\docs\app\vendor\angular-animate\index.js" />
+    <Content Include="Assets\admin\libs\ng-table\docs\app\vendor\angular-aria\angular-aria.js" />
+    <Content Include="Assets\admin\libs\ng-table\docs\app\vendor\angular-aria\angular-aria.min.js" />
+    <Content Include="Assets\admin\libs\ng-table\docs\app\vendor\angular-aria\index.js" />
+    <Content Include="Assets\admin\libs\ng-table\docs\app\vendor\angular-messages\angular-messages.js" />
+    <Content Include="Assets\admin\libs\ng-table\docs\app\vendor\angular-messages\angular-messages.min.js" />
+    <Content Include="Assets\admin\libs\ng-table\docs\app\vendor\angular-messages\index.js" />
+    <Content Include="Assets\admin\libs\ng-table\docs\app\vendor\angular-route\angular-route.js" />
+    <Content Include="Assets\admin\libs\ng-table\docs\app\vendor\angular-route\angular-route.min.js" />
+    <Content Include="Assets\admin\libs\ng-table\docs\app\vendor\angular-route\index.js" />
+    <Content Include="Assets\admin\libs\ng-table\docs\app\vendor\angular\angular-csp.css" />
+    <Content Include="Assets\admin\libs\ng-table\docs\app\vendor\angular\angular.js" />
+    <Content Include="Assets\admin\libs\ng-table\docs\app\vendor\angular\angular.min.js" />
+    <Content Include="Assets\admin\libs\ng-table\docs\app\vendor\angular\index.js" />
+    <Content Include="Assets\admin\libs\ng-table\docs\config.js" />
+    <Content Include="Assets\admin\libs\ng-table\docs\processors\componentsData.js" />
+    <Content Include="Assets\admin\libs\ng-table\docs\processors\indexPage.js" />
+    <Content Include="Assets\admin\libs\ng-table\docs\processors\nav-data.template.js" />
+    <Content Include="Assets\admin\libs\ng-table\docs\template\api-index.template.html" />
+    <Content Include="Assets\admin\libs\ng-table\docs\template\constants.template.js" />
+    <Content Include="Assets\admin\libs\ng-table\docs\template\content.template.html" />
+    <Content Include="Assets\admin\libs\ng-table\docs\template\get-started.template.html" />
+    <Content Include="Assets\admin\libs\ng-table\docs\template\index.template.html" />
+    <Content Include="Assets\admin\libs\ng-table\docs\template\ngdoc\api\api.template.html" />
+    <Content Include="Assets\admin\libs\ng-table\docs\template\ngdoc\api\componentGroup.template.html" />
+    <Content Include="Assets\admin\libs\ng-table\docs\template\ngdoc\api\directive.template.html" />
+    <Content Include="Assets\admin\libs\ng-table\docs\template\ngdoc\api\filter.template.html" />
+    <Content Include="Assets\admin\libs\ng-table\docs\template\ngdoc\api\function.template.html" />
+    <Content Include="Assets\admin\libs\ng-table\docs\template\ngdoc\api\input.template.html" />
+    <Content Include="Assets\admin\libs\ng-table\docs\template\ngdoc\api\module.template.html" />
+    <Content Include="Assets\admin\libs\ng-table\docs\template\ngdoc\api\object.template.html" />
+    <Content Include="Assets\admin\libs\ng-table\docs\template\ngdoc\api\parameters.template.html" />
+    <Content Include="Assets\admin\libs\ng-table\docs\template\ngdoc\api\provider.template.html" />
+    <Content Include="Assets\admin\libs\ng-table\docs\template\ngdoc\api\service.template.html" />
+    <Content Include="Assets\admin\libs\ng-table\docs\template\ngdoc\api\type.template.html" />
+    <Content Include="Assets\admin\libs\ng-table\docs\template\ngdoc\base.template.html" />
+    <Content Include="Assets\admin\libs\ng-table\docs\template\ngdoc\lib\events.template.html" />
+    <Content Include="Assets\admin\libs\ng-table\docs\template\ngdoc\lib\macros.html" />
+    <Content Include="Assets\admin\libs\ng-table\docs\template\ngdoc\lib\methods.template.html" />
+    <Content Include="Assets\admin\libs\ng-table\docs\template\ngdoc\lib\params.template.html" />
+    <Content Include="Assets\admin\libs\ng-table\docs\template\ngdoc\lib\properties.template.html" />
+    <Content Include="Assets\admin\libs\ng-table\docs\template\ngdoc\lib\returns.template.html" />
+    <Content Include="Assets\admin\libs\ng-table\docs\template\ngdoc\lib\this.template.html" />
+    <Content Include="Assets\admin\libs\ng-table\docs\template\ngdoc\nav.template.html" />
+    <Content Include="Assets\admin\libs\ng-table\docs\template\ngdoc\overview.template.html" />
+    <Content Include="Assets\admin\libs\ng-table\examples-old\app\app.js" />
+    <Content Include="Assets\admin\libs\ng-table\examples-old\app\main.js" />
+    <Content Include="Assets\admin\libs\ng-table\examples-old\css\bootstrap-theme.min.css" />
+    <Content Include="Assets\admin\libs\ng-table\examples-old\css\bootstrap.min.css" />
+    <Content Include="Assets\admin\libs\ng-table\examples-old\demo15.html" />
+    <Content Include="Assets\admin\libs\ng-table\examples-old\demo26.html" />
+    <Content Include="Assets\admin\libs\ng-table\examples-old\demo32.html" />
+    <Content Include="Assets\admin\libs\ng-table\examples-old\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Assets\admin\libs\ng-table\examples-old\js\angular-mocks.js" />
+    <Content Include="Assets\admin\libs\ng-table\examples-old\js\angular-resource.min.js" />
+    <Content Include="Assets\admin\libs\ng-table\examples-old\js\angular.min.js" />
+    <Content Include="Assets\admin\libs\ng-table\examples-old\js\jquery-1.9.1.min.js" />
+    <Content Include="Assets\admin\libs\ng-table\examples-old\js\ng-table-export.src.js" />
+    <Content Include="Assets\admin\libs\ng-table\examples-old\js\ng-table-resizable-columns.js" />
+    <Content Include="Assets\admin\libs\ng-table\examples-old\js\require.js" />
+    <Content Include="Assets\admin\libs\ng-table\Gruntfile.js" />
+    <Content Include="Assets\admin\libs\ng-table\gulpfile.js" />
+    <Content Include="Assets\admin\libs\ng-table\karma.conf.js" />
+    <Content Include="Assets\admin\libs\ngBootbox\dist\ngBootbox.js" />
+    <Content Include="Assets\admin\libs\ngBootbox\dist\ngBootbox.min.js" />
+    <Content Include="Assets\admin\libs\ngBootbox\examples\example-1\app.js" />
+    <Content Include="Assets\admin\libs\ngBootbox\examples\example-1\custom-dialog.tpl.html" />
+    <Content Include="Assets\admin\libs\ngBootbox\examples\example-1\index.html" />
+    <Content Include="Assets\admin\libs\ngBootbox\examples\example-2\app.js" />
+    <Content Include="Assets\admin\libs\ngBootbox\examples\example-2\index.html" />
+    <Content Include="Assets\admin\libs\ngBootbox\examples\example-2\main.js" />
+    <Content Include="Assets\admin\libs\ngBootbox\examples\example-2\require.js" />
+    <Content Include="Assets\admin\libs\ngBootbox\examples\index.html" />
+    <Content Include="Assets\admin\libs\ngBootbox\gulpfile.js" />
+    <Content Include="Assets\admin\libs\ngBootbox\ngBootbox.js" />
+    <Content Include="Assets\admin\libs\signalr\.gitignore" />
+    <Content Include="Assets\admin\libs\signalr\jquery.signalR.js" />
+    <Content Include="Assets\admin\libs\signalr\jquery.signalR.min.js" />
+    <Content Include="Assets\admin\libs\toastr\toastr.css" />
+    <Content Include="Assets\admin\libs\toastr\toastr.js" />
+    <Content Include="Assets\admin\libs\toastr\toastr.min.css" />
+    <Content Include="Assets\admin\libs\toastr\toastr.min.js" />
+    <Content Include="bundles\landing.js" />
+    <Content Include="bundles\landingViewModel.js" />
+    <Content Include="bundles\tpcore.js" />
+    <Content Include="bundles\utility.js" />
+    <Content Include="ConnectionString.txt" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\img\bittrex3\landing\Card_BLK.jpg" />
+    <Content Include="Content\img\bittrex3\landing\Card_BTC.jpg" />
+    <Content Include="Content\img\bittrex3\landing\Card_DASH.jpg" />
+    <Content Include="Content\img\bittrex3\landing\Card_ETH.jpg" />
+    <Content Include="Content\img\bittrex3\landing\Card_GAM.jpg" />
+    <Content Include="Content\img\bittrex3\landing\Card_GRC.jpg" />
+    <Content Include="Content\img\bittrex3\landing\Card_JBS.jpg" />
+    <Content Include="Content\img\bittrex3\landing\Card_LTC.jpg" />
+    <Content Include="Content\img\bittrex3\landing\Card_UBQ.jpg" />
+    <Content Include="Content\img\bittrex3\landing\header.jpg" />
+    <Content Include="Content\img\bittrex3\landing\seattle.jpg" />
+    <Content Include="Content\img\logos\bittrex-logo-transparent.png" />
+    <Content Include="Content\landing.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\tpcore.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="Assets\admin\fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Assets\admin\fonts\FontAwesome.otf" />
+    <Content Include="Assets\admin\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Assets\admin\fonts\fontawesome-webfont.woff" />
+    <Content Include="Assets\admin\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Assets\admin\fonts\fontawesome-webfont.eot" />
+    <Content Include=".bowerrc" />
+    <Content Include="bower.json" />
+    <Content Include="Assets\admin\libs\angular-loading-bar\.bower.json" />
+    <Content Include="Assets\admin\libs\angular-loading-bar\bower.json" />
+    <Content Include="Assets\admin\libs\angular-loading-bar\CHANGELOG.md" />
+    <Content Include="Assets\admin\libs\angular-loading-bar\CONTRIBUTING.md" />
+    <Content Include="Assets\admin\libs\angular-loading-bar\ISSUE_TEMPLATE.md" />
+    <Content Include="Assets\admin\libs\angular-loading-bar\LICENSE" />
+    <Content Include="Assets\admin\libs\angular-loading-bar\package.json" />
+    <Content Include="Assets\admin\libs\angular-loading-bar\PULL_REQUEST_TEMPLATE.md" />
+    <Content Include="Assets\admin\libs\angular-loading-bar\README.md" />
+    <Content Include="Assets\admin\libs\angular-local-storage\.bower.json" />
+    <Content Include="Assets\admin\libs\angular-local-storage\.bowerrc" />
+    <Content Include="Assets\admin\libs\angular-local-storage\.editorconfig" />
+    <Content Include="Assets\admin\libs\angular-local-storage\.travis.yml" />
+    <Content Include="Assets\admin\libs\angular-local-storage\bower.json" />
+    <Content Include="Assets\admin\libs\angular-local-storage\CHANGELOG.md" />
+    <Content Include="Assets\admin\libs\angular-local-storage\dist\angular-local-storage.min.js.map" />
+    <Content Include="Assets\admin\libs\angular-local-storage\LICENSE" />
+    <Content Include="Assets\admin\libs\angular-local-storage\package.json" />
+    <Content Include="Assets\admin\libs\angular-local-storage\README.md" />
+    <Content Include="Assets\admin\libs\angular-ui-router\.bower.json" />
+    <Content Include="Assets\admin\libs\angular-ui-router\artifacts.json" />
+    <Content Include="Assets\admin\libs\angular-ui-router\bower.json" />
+    <Content Include="Assets\admin\libs\angular-ui-router\CHANGELOG.md" />
+    <Content Include="Assets\admin\libs\angular-ui-router\CONTRIBUTING.md" />
+    <Content Include="Assets\admin\libs\angular-ui-router\DOCS.md" />
+    <Content Include="Assets\admin\libs\angular-ui-router\ISSUE_TEMPLATE.md" />
+    <Content Include="Assets\admin\libs\angular-ui-router\LICENSE" />
+    <Content Include="Assets\admin\libs\angular-ui-router\migrate\migrate.json" />
+    <Content Include="Assets\admin\libs\angular-ui-router\README.md" />
+    <Content Include="Assets\admin\libs\angular-ui-router\release\angular-ui-router.js.map" />
+    <Content Include="Assets\admin\libs\angular-ui-router\release\angular-ui-router.min.js.map" />
+    <Content Include="Assets\admin\libs\angular-ui-router\release\resolveService.js.map" />
+    <Content Include="Assets\admin\libs\angular-ui-router\release\resolveService.min.js.map" />
+    <Content Include="Assets\admin\libs\angular-ui-router\release\stateEvents.js.map" />
+    <Content Include="Assets\admin\libs\angular-ui-router\release\stateEvents.min.js.map" />
+    <Content Include="Assets\admin\libs\angular-ui-router\release\ui-router-angularjs.js.map" />
+    <Content Include="Assets\admin\libs\angular-ui-router\release\ui-router-angularjs.min.js.map" />
+    <Content Include="Assets\admin\libs\angular-ui-router\tslint.json" />
+    <Content Include="Assets\admin\libs\angular-ui-router\yarn.lock" />
+    <Content Include="Assets\admin\libs\angular\.bower.json" />
+    <Content Include="Assets\admin\libs\angular\angular.min.js.gzip" />
+    <Content Include="Assets\admin\libs\angular\angular.min.js.map" />
+    <Content Include="Assets\admin\libs\angular\bower.json" />
+    <Content Include="Assets\admin\libs\angular\LICENSE.md" />
+    <Content Include="Assets\admin\libs\angular\package.json" />
+    <Content Include="Assets\admin\libs\angular\README.md" />
+    <Content Include="Assets\admin\libs\bootbox\.bower.json" />
+    <Content Include="Assets\admin\libs\bootbox\.jshintrc" />
+    <Content Include="Assets\admin\libs\bootbox\.npmignore" />
+    <Content Include="Assets\admin\libs\bootbox\.travis.yml" />
+    <Content Include="Assets\admin\libs\bootbox\bower.json" />
+    <Content Include="Assets\admin\libs\bootbox\CONTRIBUTING.md" />
+    <Content Include="Assets\admin\libs\bootbox\LICENSE.md" />
+    <Content Include="Assets\admin\libs\bootbox\package.json" />
+    <Content Include="Assets\admin\libs\bootbox\README.md" />
+    <Content Include="Assets\admin\libs\bootstrap\.bower.json" />
+    <Content Include="Assets\admin\libs\bootstrap\bower.json" />
+    <Content Include="Assets\admin\libs\bootstrap\CHANGELOG.md" />
+    <Content Include="Assets\admin\libs\bootstrap\dist\css\bootstrap-theme.css.map" />
+    <Content Include="Assets\admin\libs\bootstrap\dist\css\bootstrap-theme.min.css.map" />
+    <Content Include="Assets\admin\libs\bootstrap\dist\css\bootstrap.css.map" />
+    <Content Include="Assets\admin\libs\bootstrap\dist\css\bootstrap.min.css.map" />
+    <Content Include="Assets\admin\libs\bootstrap\dist\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Assets\admin\libs\bootstrap\dist\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Assets\admin\libs\bootstrap\dist\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Assets\admin\libs\bootstrap\dist\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Assets\admin\libs\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Assets\admin\libs\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Assets\admin\libs\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Assets\admin\libs\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Assets\admin\libs\bootstrap\Gemfile" />
+    <Content Include="Assets\admin\libs\bootstrap\Gemfile.lock" />
+    <Content Include="Assets\admin\libs\bootstrap\grunt\.jshintrc" />
+    <Content Include="Assets\admin\libs\bootstrap\grunt\configBridge.json" />
+    <Content Include="Assets\admin\libs\bootstrap\grunt\npm-shrinkwrap.json" />
+    <Content Include="Assets\admin\libs\bootstrap\grunt\sauce_browsers.yml" />
+    <Content Include="Assets\admin\libs\bootstrap\ISSUE_TEMPLATE.md" />
+    <Content Include="Assets\admin\libs\bootstrap\js\.jscsrc" />
+    <Content Include="Assets\admin\libs\bootstrap\js\.jshintrc" />
+    <Content Include="Assets\admin\libs\bootstrap\less\.csscomb.json" />
+    <Content Include="Assets\admin\libs\bootstrap\less\.csslintrc" />
+    <Content Include="Assets\admin\libs\bootstrap\less\alerts.less" />
+    <Content Include="Assets\admin\libs\bootstrap\less\badges.less" />
+    <Content Include="Assets\admin\libs\bootstrap\less\bootstrap.less" />
+    <Content Include="Assets\admin\libs\bootstrap\less\breadcrumbs.less" />
+    <Content Include="Assets\admin\libs\bootstrap\less\button-groups.less" />
+    <Content Include="Assets\admin\libs\bootstrap\less\buttons.less" />
+    <Content Include="Assets\admin\libs\bootstrap\less\carousel.less" />
+    <Content Include="Assets\admin\libs\bootstrap\less\close.less" />
+    <Content Include="Assets\admin\libs\bootstrap\less\code.less" />
+    <Content Include="Assets\admin\libs\bootstrap\less\component-animations.less" />
+    <Content Include="Assets\admin\libs\bootstrap\less\dropdowns.less" />
+    <Content Include="Assets\admin\libs\bootstrap\less\forms.less" />
+    <Content Include="Assets\admin\libs\bootstrap\less\glyphicons.less" />
+    <Content Include="Assets\admin\libs\bootstrap\less\grid.less" />
+    <Content Include="Assets\admin\libs\bootstrap\less\input-groups.less" />
+    <Content Include="Assets\admin\libs\bootstrap\less\jumbotron.less" />
+    <Content Include="Assets\admin\libs\bootstrap\less\labels.less" />
+    <Content Include="Assets\admin\libs\bootstrap\less\list-group.less" />
+    <Content Include="Assets\admin\libs\bootstrap\less\media.less" />
+    <Content Include="Assets\admin\libs\bootstrap\less\mixins.less" />
+    <Content Include="Assets\admin\libs\bootstrap\less\mixins\alerts.less" />
+    <Content Include="Assets\admin\libs\bootstrap\less\mixins\background-variant.less" />
+    <Content Include="Assets\admin\libs\bootstrap\less\mixins\border-radius.less" />
+    <Content Include="Assets\admin\libs\bootstrap\less\mixins\buttons.less" />
+    <Content Include="Assets\admin\libs\bootstrap\less\mixins\center-block.less" />
+    <Content Include="Assets\admin\libs\bootstrap\less\mixins\clearfix.less" />
+    <Content Include="Assets\admin\libs\bootstrap\less\mixins\forms.less" />
+    <Content Include="Assets\admin\libs\bootstrap\less\mixins\gradients.less" />
+    <Content Include="Assets\admin\libs\bootstrap\less\mixins\grid-framework.less" />
+    <Content Include="Assets\admin\libs\bootstrap\less\mixins\grid.less" />
+    <Content Include="Assets\admin\libs\bootstrap\less\mixins\hide-text.less" />
+    <Content Include="Assets\admin\libs\bootstrap\less\mixins\image.less" />
+    <Content Include="Assets\admin\libs\bootstrap\less\mixins\labels.less" />
+    <Content Include="Assets\admin\libs\bootstrap\less\mixins\list-group.less" />
+    <Content Include="Assets\admin\libs\bootstrap\less\mixins\nav-divider.less" />
+    <Content Include="Assets\admin\libs\bootstrap\less\mixins\nav-vertical-align.less" />
+    <Content Include="Assets\admin\libs\bootstrap\less\mixins\opacity.less" />
+    <Content Include="Assets\admin\libs\bootstrap\less\mixins\pagination.less" />
+    <Content Include="Assets\admin\libs\bootstrap\less\mixins\panels.less" />
+    <Content Include="Assets\admin\libs\bootstrap\less\mixins\progress-bar.less" />
+    <Content Include="Assets\admin\libs\bootstrap\less\mixins\reset-filter.less" />
+    <Content Include="Assets\admin\libs\bootstrap\less\mixins\reset-text.less" />
+    <Content Include="Assets\admin\libs\bootstrap\less\mixins\resize.less" />
+    <Content Include="Assets\admin\libs\bootstrap\less\mixins\responsive-visibility.less" />
+    <Content Include="Assets\admin\libs\bootstrap\less\mixins\size.less" />
+    <Content Include="Assets\admin\libs\bootstrap\less\mixins\tab-focus.less" />
+    <Content Include="Assets\admin\libs\bootstrap\less\mixins\table-row.less" />
+    <Content Include="Assets\admin\libs\bootstrap\less\mixins\text-emphasis.less" />
+    <Content Include="Assets\admin\libs\bootstrap\less\mixins\text-overflow.less" />
+    <Content Include="Assets\admin\libs\bootstrap\less\mixins\vendor-prefixes.less" />
+    <Content Include="Assets\admin\libs\bootstrap\less\modals.less" />
+    <Content Include="Assets\admin\libs\bootstrap\less\navbar.less" />
+    <Content Include="Assets\admin\libs\bootstrap\less\navs.less" />
+    <Content Include="Assets\admin\libs\bootstrap\less\normalize.less" />
+    <Content Include="Assets\admin\libs\bootstrap\less\pager.less" />
+    <Content Include="Assets\admin\libs\bootstrap\less\pagination.less" />
+    <Content Include="Assets\admin\libs\bootstrap\less\panels.less" />
+    <Content Include="Assets\admin\libs\bootstrap\less\popovers.less" />
+    <Content Include="Assets\admin\libs\bootstrap\less\print.less" />
+    <Content Include="Assets\admin\libs\bootstrap\less\progress-bars.less" />
+    <Content Include="Assets\admin\libs\bootstrap\less\responsive-embed.less" />
+    <Content Include="Assets\admin\libs\bootstrap\less\responsive-utilities.less" />
+    <Content Include="Assets\admin\libs\bootstrap\less\scaffolding.less" />
+    <Content Include="Assets\admin\libs\bootstrap\less\tables.less" />
+    <Content Include="Assets\admin\libs\bootstrap\less\theme.less" />
+    <Content Include="Assets\admin\libs\bootstrap\less\thumbnails.less" />
+    <Content Include="Assets\admin\libs\bootstrap\less\tooltip.less" />
+    <Content Include="Assets\admin\libs\bootstrap\less\type.less" />
+    <Content Include="Assets\admin\libs\bootstrap\less\utilities.less" />
+    <Content Include="Assets\admin\libs\bootstrap\less\variables.less" />
+    <Content Include="Assets\admin\libs\bootstrap\less\wells.less" />
+    <Content Include="Assets\admin\libs\bootstrap\LICENSE" />
+    <Content Include="Assets\admin\libs\bootstrap\nuget\bootstrap.less.nuspec" />
+    <Content Include="Assets\admin\libs\bootstrap\nuget\bootstrap.nuspec" />
+    <Content Include="Assets\admin\libs\bootstrap\nuget\MyGet.ps1" />
+    <Content Include="Assets\admin\libs\bootstrap\package.json" />
+    <Content Include="Assets\admin\libs\bootstrap\README.md" />
+    <Content Include="Assets\admin\libs\jquery\.bower.json" />
+    <Content Include="Assets\admin\libs\jquery\bower.json" />
+    <Content Include="Assets\admin\libs\jquery\dist\jquery.min.map" />
+    <Content Include="Assets\admin\libs\jquery\external\sizzle\dist\sizzle.min.map" />
+    <Content Include="Assets\admin\libs\jquery\README.md" />
+    <Content Include="Assets\admin\libs\jquery\src\.jshintrc" />
+    <Content Include="Assets\admin\libs\ngBootbox\.bower.json" />
+    <Content Include="Assets\admin\libs\ngBootbox\bower.json" />
+    <Content Include="Assets\admin\libs\ngBootbox\package.json" />
+    <Content Include="Assets\admin\libs\ngBootbox\README.md" />
+    <Content Include="Assets\admin\libs\ngBootbox\tsd.json" />
+    <Content Include="Assets\admin\libs\toastr\.bower.json" />
+    <Content Include="Assets\admin\libs\toastr\bower.json" />
+    <Content Include="Assets\admin\libs\toastr\LICENSE" />
+    <Content Include="Assets\admin\libs\toastr\README.md" />
+    <Content Include="Assets\admin\libs\toastr\toastr.js.map" />
+    <Content Include="Assets\admin\libs\toastr\toastr.less" />
+    <Content Include="Assets\admin\libs\toastr\toastr.scss" />
+    <Content Include="ConnectionStrings.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="AppSettings.config" />
+    <Content Include="CoinWebapp.PublishSettings" />
+    <Content Include="Assets\admin\libs\angular-recaptcha\.bower.json" />
+    <Content Include="Assets\admin\libs\angular-recaptcha\bower.json" />
+    <Content Include="Assets\admin\libs\angular-recaptcha\LICENSE" />
+    <Content Include="Assets\admin\libs\angular-recaptcha\package.json" />
+    <Content Include="Assets\admin\libs\angular-recaptcha\README.md" />
+    <Content Include="Assets\admin\libs\mathjs\.bower.json" />
+    <Content Include="Assets\admin\libs\mathjs\benchmark\matrix_operations_octave.m" />
+    <Content Include="Assets\admin\libs\mathjs\benchmark\matrix_operations_python.py" />
+    <Content Include="Assets\admin\libs\mathjs\benchmark\README.md" />
+    <Content Include="Assets\admin\libs\mathjs\bower.json" />
+    <Content Include="Assets\admin\libs\mathjs\composer.json" />
+    <Content Include="Assets\admin\libs\mathjs\CONTRIBUTING.md" />
+    <Content Include="Assets\admin\libs\mathjs\dist\math.map" />
+    <Content Include="Assets\admin\libs\mathjs\docs\chaining.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\command_line_interface.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\configuration.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\core.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\core\chaining.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\core\configuration.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\core\extension.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\core\index.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\core\serialization.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\custom_bundling.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\datatypes\bignumbers.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\datatypes\complex_numbers.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\datatypes\fractions.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\datatypes\index.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\datatypes\matrices.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\datatypes\numbers.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\datatypes\units.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\expressions.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\expressions\algebra.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\expressions\customization.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\expressions\expression_trees.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\expressions\html_classes.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\expressions\index.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\expressions\parsing.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\expressions\security.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\expressions\syntax.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\extension.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\getting_started.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\index.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\classes.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\classes\densematrix.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\classes\fibonacciheap.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\classes\matrixindex.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\classes\matrixrange.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\classes\resultset.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\classes\sparsematrix.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\classes\unit.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\constants.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\abs.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\acos.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\acosh.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\acot.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\acoth.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\acsc.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\acsch.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\add.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\and.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\arg.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\asec.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\asech.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\asin.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\asinh.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\atan.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\atan2.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\atanh.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\bellNumbers.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\bignumber.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\bitAnd.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\bitNot.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\bitOr.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\bitXor.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\boolean.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\catalan.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\cbrt.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\ceil.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\chain.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\clone.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\combinations.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\compare.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\compareNatural.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\compile.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\complex.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\composition.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\concat.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\config.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\conj.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\cos.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\cosh.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\cot.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\coth.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\createUnit.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\cross.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\csc.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\csch.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\cube.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\deepEqual.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\derivative.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\det.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\diag.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\distance.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\divide.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\dot.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\dotDivide.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\dotMultiply.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\dotPow.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\equal.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\erf.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\eval.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\exp.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\eye.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\factorial.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\filter.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\fix.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\flatten.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\floor.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\forEach.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\format.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\fraction.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\gamma.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\gcd.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\help.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\hypot.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\im.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\import.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\index.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\intersect.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\inv.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\isInteger.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\isNaN.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\isNegative.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\isNumeric.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\isPositive.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\isPrime.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\isZero.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\kldivergence.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\kron.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\larger.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\largerEq.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\lcm.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\leftShift.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\log.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\log10.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\lsolve.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\lup.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\lusolve.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\mad.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\map.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\matrix.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\max.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\mean.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\median.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\min.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\mod.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\mode.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\multinomial.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\multiply.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\norm.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\not.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\nthRoot.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\number.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\ones.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\or.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\parse.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\parser.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\partitionSelect.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\permutations.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\pickRandom.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\pow.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\print.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\prod.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\qr.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\quantileSeq.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\random.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\randomInt.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\range.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\re.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\reshape.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\resize.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\rightArithShift.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\rightLogShift.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\round.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\sec.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\sech.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\setCartesian.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\setDifference.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\setDistinct.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\setIntersect.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\setIsSubset.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\setMultiplicity.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\setPowerset.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\setSize.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\setSymDifference.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\setUnion.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\sign.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\simplify.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\sin.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\sinh.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\size.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\slu.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\smaller.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\smallerEq.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\sort.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\sparse.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\splitUnit.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\sqrt.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\square.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\squeeze.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\std.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\stirlingS2.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\string.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\subset.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\subtract.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\sum.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\tan.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\tanh.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\to.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\trace.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\transpose.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\typed.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\typeof.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\unaryMinus.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\unaryPlus.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\unequal.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\unit.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\usolve.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\var.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\xgcd.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\xor.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\functions\zeros.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\index.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\reference\units.md" />
+    <Content Include="Assets\admin\libs\mathjs\docs\serialization.md" />
+    <Content Include="Assets\admin\libs\mathjs\HISTORY.md" />
+    <Content Include="Assets\admin\libs\mathjs\lib\type\matrix\utils\README.md" />
+    <Content Include="Assets\admin\libs\mathjs\LICENSE" />
+    <Content Include="Assets\admin\libs\mathjs\NOTICE" />
+    <Content Include="Assets\admin\libs\mathjs\package-lock.json" />
+    <Content Include="Assets\admin\libs\mathjs\README.md" />
+    <Content Include="Assets\admin\libs\mathjs\ROADMAP.md" />
+    <Content Include="Assets\admin\libs\ng-table\.bower.json" />
+    <Content Include="Assets\admin\libs\ng-table\.bowerrc" />
+    <Content Include="Assets\admin\libs\ng-table\.editorconfig" />
+    <Content Include="Assets\admin\libs\ng-table\.jshintrc" />
+    <Content Include="Assets\admin\libs\ng-table\.npmignore" />
+    <Content Include="Assets\admin\libs\ng-table\.travis.yml" />
+    <Content Include="Assets\admin\libs\ng-table\.vscode\settings.json" />
+    <Content Include="Assets\admin\libs\ng-table\.vscode\tasks.json" />
+    <Content Include="Assets\admin\libs\ng-table\bower.json" />
+    <Content Include="Assets\admin\libs\ng-table\CHANGELOG.md" />
+    <Content Include="Assets\admin\libs\ng-table\circle.yml" />
+    <Content Include="Assets\admin\libs\ng-table\CONTRIBUTING.md" />
+    <Content Include="Assets\admin\libs\ng-table\DeleteNodeModules.bat" />
+    <Content Include="Assets\admin\libs\ng-table\demo-site\CNAME" />
+    <Content Include="Assets\admin\libs\ng-table\demo-site\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Assets\admin\libs\ng-table\demo-site\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Assets\admin\libs\ng-table\demo-site\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Assets\admin\libs\ng-table\dist\ng-table.less" />
+    <Content Include="Assets\admin\libs\ng-table\dist\ng-table.min.js.map" />
+    <Content Include="Assets\admin\libs\ng-table\docs\app\vendor\angular-animate\.bower.json" />
+    <Content Include="Assets\admin\libs\ng-table\docs\app\vendor\angular-animate\angular-animate.min.js.map" />
+    <Content Include="Assets\admin\libs\ng-table\docs\app\vendor\angular-animate\bower.json" />
+    <Content Include="Assets\admin\libs\ng-table\docs\app\vendor\angular-animate\package.json" />
+    <Content Include="Assets\admin\libs\ng-table\docs\app\vendor\angular-animate\README.md" />
+    <Content Include="Assets\admin\libs\ng-table\docs\app\vendor\angular-aria\.bower.json" />
+    <Content Include="Assets\admin\libs\ng-table\docs\app\vendor\angular-aria\angular-aria.min.js.map" />
+    <Content Include="Assets\admin\libs\ng-table\docs\app\vendor\angular-aria\bower.json" />
+    <Content Include="Assets\admin\libs\ng-table\docs\app\vendor\angular-aria\package.json" />
+    <Content Include="Assets\admin\libs\ng-table\docs\app\vendor\angular-aria\README.md" />
+    <Content Include="Assets\admin\libs\ng-table\docs\app\vendor\angular-messages\.bower.json" />
+    <Content Include="Assets\admin\libs\ng-table\docs\app\vendor\angular-messages\angular-messages.min.js.map" />
+    <Content Include="Assets\admin\libs\ng-table\docs\app\vendor\angular-messages\bower.json" />
+    <Content Include="Assets\admin\libs\ng-table\docs\app\vendor\angular-messages\package.json" />
+    <Content Include="Assets\admin\libs\ng-table\docs\app\vendor\angular-messages\README.md" />
+    <Content Include="Assets\admin\libs\ng-table\docs\app\vendor\angular-route\.bower.json" />
+    <Content Include="Assets\admin\libs\ng-table\docs\app\vendor\angular-route\angular-route.min.js.map" />
+    <Content Include="Assets\admin\libs\ng-table\docs\app\vendor\angular-route\bower.json" />
+    <Content Include="Assets\admin\libs\ng-table\docs\app\vendor\angular-route\package.json" />
+    <Content Include="Assets\admin\libs\ng-table\docs\app\vendor\angular-route\README.md" />
+    <Content Include="Assets\admin\libs\ng-table\docs\app\vendor\angular\.bower.json" />
+    <Content Include="Assets\admin\libs\ng-table\docs\app\vendor\angular\angular.min.js.gzip" />
+    <Content Include="Assets\admin\libs\ng-table\docs\app\vendor\angular\angular.min.js.map" />
+    <Content Include="Assets\admin\libs\ng-table\docs\app\vendor\angular\bower.json" />
+    <Content Include="Assets\admin\libs\ng-table\docs\app\vendor\angular\package.json" />
+    <Content Include="Assets\admin\libs\ng-table\docs\app\vendor\angular\README.md" />
+    <Content Include="Assets\admin\libs\ng-table\examples-old\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Assets\admin\libs\ng-table\examples-old\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Assets\admin\libs\ng-table\examples-old\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Assets\admin\libs\ng-table\LICENSE" />
+    <Content Include="Assets\admin\libs\ng-table\package.json" />
+    <Content Include="Assets\admin\libs\ng-table\README.md" />
+    <Content Include="Assets\admin\libs\ng-table\RELEASING.md" />
+    <Content Include="Assets\admin\libs\ng-table\tsconfig.json" />
+    <Content Include="Assets\admin\libs\ng-table\typings.json" />
+    <Content Include="Assets\admin\libs\signalr\.bower.json" />
+    <Content Include="Assets\admin\libs\signalr\bower.json" />
+    <Content Include="Assets\admin\libs\signalr\LICENSE.md" />
+    <Content Include="Assets\admin\libs\signalr\package.json" />
+    <Content Include="Assets\admin\libs\signalr\README.md" />
+    <None Include="job_scheduling_data_2_0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\PublishProfiles\CoinWebapp - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\CoinWebapp - Web Deploy.pubxml" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.signalR-2.2.2.js" />
+    <Content Include="Scripts\jquery.signalR-2.2.2.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Coin.Common\Coin.Common.csproj">
+      <Project>{12ed355b-85ef-42f3-b468-9d239ba02af9}</Project>
+      <Name>Coin.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Coin.Data\Coin.Data.csproj">
+      <Project>{220944fa-580c-4aee-a75e-b777e2d3c24a}</Project>
+      <Name>Coin.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Coin.Model\Coin.Model.csproj">
+      <Project>{d76ff48a-6eb7-4304-9d27-ef270b333822}</Project>
+      <Name>Coin.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Coin.Service\Coin.Service.csproj">
+      <Project>{820b3830-7669-444a-adfc-db6e700abfd3}</Project>
+      <Name>Coin.Service</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Assets\admin\libs\ngBootbox\typings\angularjs\angular.d.ts" />
+    <TypeScriptCompile Include="Assets\admin\libs\ngBootbox\typings\jquery\jquery.d.ts" />
+    <TypeScriptCompile Include="Assets\admin\libs\ngBootbox\typings\tsd.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>47800</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:47800/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

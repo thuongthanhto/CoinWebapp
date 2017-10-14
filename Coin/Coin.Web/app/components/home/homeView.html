@@ -1,0 +1,109 @@
+﻿<div id="home-wrapper">
+
+    <div class="container carousel">
+
+        <!--<div class="hidden-xs">
+            <div class="connected-carousels">
+                <div class="stage">
+                    <div class="carousel carousel-stage">
+                        <div data-bind="template: { name: function() { return carousel.isSetCurrentSummary() ? 'carouselGeneral' : 'carouselCrowdfund'; }, data: $data }"></div>
+                    </div>
+                </div>
+                <div class="navigation">
+                    <div class="carousel carousel-navigation">
+                        <ul data-bind="foreach:carousel.markets">
+                            <li>
+                                <div class="item" data-bind="click: clickEntry">
+                                    <img data-bind="attr: { src: imgPath(), alt: marketCurrency() }" width="80" height="80" onerror="this.src = '/Content/img/symbols/BTC.png'">
+                                    <div class="title" data-bind="text: carouselType()"></div>
+                                    <div class="name" data-bind="text: marketCurrencyName() + ' (' + marketCurrency() + ')'"></div>
+                                    <div class="volume" data-bind="text: displayBaseVolume() + ' ' + baseCurrency()"></div>
+                                    <div class="changed" data-bind="text: displayChange()"></div>
+                                    <div class="marketName" data-bind="text: marketName()"></div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <script id="carouselGeneral" type="text/html">
+                    <div data-bind="if: carousel.isSetCurrentSummary()">
+                        <div class="text-overlay" data-bind="with: carousel.currentSummary">
+                            <div>
+                                <div class="img-wrapper">
+                                    <img data-bind="attr: { src: imgPath, alt: marketCurrency }" onerror="this.src = '/Content/img/symbols/BTC.png'" />
+                                </div>
+                                <div class="title" data-bind="text: title"></div>
+                                <div class="subtitle-price">Last Price:</div>
+                                <div class="price" data-bind="text: displayLast() + ' ' + baseCurrency"></div>
+                                <div class="subtitle-volume">24hr Volume:</div>
+                                <div class="volume" data-bind="text: displayBaseVolume() + ' ' + baseCurrency"></div>
+                            </div>
+                        </div>
+                        <div class="tick-chart" id="divTickChart">
+                        </div>
+                    </div>
+                </script>
+
+                <script id="carouselCrowdfund" type="text/html">
+                    <div data-bind="ifnot: carousel.isSetCurrentSummary()" style="height:200px">
+                        <div data-bind="with: carousel.crowdfundSummary">
+                            <div style="width:100%; height: 200px" data-bind="css: theme">
+                                <div class="cfc-img-wrapper" data-bind="css:imgWrapper">
+                                    <img class="img-responsive" data-bind="attr: { src: bannerImgPath, alt: marketCurrency }" onerror="this.src = '/Content/img/symbols/BTC.png'" />
+                                </div>
+                                <h1 style="font-family: 'Roboto', sans-serif; position:absolute; margin:20px; top:20px; left:240px" data-bind="text:tagLine"></h1>
+                                <div data-bind="if: tagLine2">
+                                    <h3 style="font-family: 'Roboto', sans-serif; position:absolute; margin:20px; top:64px; left:240px" data-bind="text:tagLine2"></h3>
+                                </div>
+                                <a data-bind="attr: { href: marketPath }" style="position:absolute; margin:20px; top:100px; right:100px"><h2><span class="fa fa-exchange"></span> <span data-bind="text: displayChange"></span></h2></a>
+                            </div>
+                        </div>
+                    </div>
+                </script>
+
+
+            </div>
+
+
+        </div>-->
+
+    </div>
+    <div class="container marketing" data-bind="with: tables">
+
+        <!-- START THE FEATURETTES -->
+        <div class="row featurette">
+            <div class="col-md-12" data-bind="with: btcTable">
+
+                <div class="row" style="margin-bottom:5px">
+                    <div class="col-xs-6">
+                        <h2 class="featurette-heading top-header" style="padding: 0px">
+                            <span class="hidden-xs" data-bind="text: title"></span><span style="float: left; padding-top:4px"><i data-bind="css: icon"></i></span> <span>Markets</span>
+                        </h2>
+                    </div>
+                    <div class="col-xs-6">
+                        <form class="form-inline" style="float:right">
+                            <div class="form-group">
+                                <input type="text" class="form-control" data-bind="textInput: filter">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+
+                <table ng-table="customConfigParams" class="table table-striped table-hover table-condensed table-bordered" style="table-layout: fixed; margin-left: 0px; width: 100%;">
+                    <tr ng-repeat="row in $data">
+                        <td data-title="'Name'">{{row.name}}</td>
+                        <td data-title="'Market Cap'">{{row.market_cap_usd | currency}}</td>
+                        <td data-title="'Price'">{{row.price_usd | currency}}</td>
+                        <td data-title="'Circulating Supply'">{{row.available_supply}}</td>
+                        <td data-title="'Volume (24h)'">{{row["24h_volume_usd"]}}</td>
+                        <td data-title="'% Change (24h)'">{{row.percent_change_24h}}%</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <!-- /END THE FEATURETTES -->
+    </div>
+
+</div>

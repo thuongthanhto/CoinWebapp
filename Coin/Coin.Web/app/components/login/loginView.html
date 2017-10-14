@@ -1,0 +1,47 @@
+﻿<link href="../../../Assets/admin/css/signin.css" rel="stylesheet" />
+<div class="login-wrapper">
+    <a href="/">
+        <img class="logo" src="/Assets/admin/img/bittrex-logo-white-no-tagline.png" />
+    </a>
+    <div class="box">
+        <div class="content-wrap">
+            <form role="form" method="post" novalidate name="myForm" ng-submit="loginSubmit()">
+                <h6>Log in</h6>
+                <input class="form-control" required name="UserName" placeholder="Email Address" type="email" ng-model="loginData.userName" />
+                <span ng-if="myForm.UserName.$touched">
+                    <span class="has-error" ng-show="myForm.UserName.$error.required">
+                        The email address is required.
+                    </span>
+                    <span class="has-error" ng-show="myForm.UserName.$error.email">
+                        Invalid Email Address.
+                    </span>
+                </span>
+
+                <input autocomplete="off" class="form-control" required name="Password" placeholder="Your Password" type="password" ng-model="loginData.password"/>
+                <span ng-if="myForm.Password.$touched">
+                    <span class="has-error" ng-show="myForm.Password.$error.required">
+                        The Password field is required.
+                    </span>
+                </span>
+                <br />
+                <input id="RememberMe" name="RememberMe" type="checkbox" value="true" ng-model="loginData.isRememberMe"/>
+                <label for="RememberMe" style="margin-left: 3px">Remember me?</label>
+                <a href="admin#!/fogot_password" class="forgot">Forgot password?</a>
+                <div style="margin-top: 10px; margin-bottom: 10px; margin-left: 4%;" vc-recaptcha key="publicKey"
+                     on-create="setWidgetId(widgetId)"
+                     on-success="setResponse(response)"
+                     on-expire="cbExpiration()"
+                     lang="en"></div>
+                <button class="btn btn-primary login" ng-disabled="myForm.$invalid || disableCaptcha" type="submit">
+                    <i class="fa fa-sign-in"></i> Login
+                </button>
+            </form>
+        </div>
+    </div>
+    <div class="no-account">
+        <p>
+            Don't have an account?
+            <a href="admin#!/register">Sign Up</a>
+        </p>
+    </div>
+</div>

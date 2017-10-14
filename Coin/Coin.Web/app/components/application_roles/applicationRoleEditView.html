@@ -1,0 +1,55 @@
+﻿<section class="content-header">
+    <h1>
+        Chỉnh sửa quyền
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#!/admin"><i class="fa fa-dashboard"></i> Trang chủ</a></li>
+        <li><a href="#!/application_roles">Danh mục quyền</a></li>
+        <li class="active">Chỉnh sửa</li>
+    </ol>
+</section>
+<section class="content">
+    <div class="box box-info">
+        <div class="box-header with-border">
+            <h3 class="box-title">{{appRole.Name}}</h3>
+        </div><!-- /.box-header -->
+        <!-- form start -->
+        <form class="form-horizontal" role="form" novalidate name="frmEditAppRole" ng-submit="updateApplicationRole()">
+            <div class="box-body">
+                <div class="form-group">
+                    <div class="col-sm-2"></div>
+                    <div class="col-sm-10">
+                        <ul style="list-style-type: none;">
+                            <li id="errorMessages" style="color: red;" data-ng-repeat="error in errors">{{error}}</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Tên quyền</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="name" class="form-control" autocomplete="off" ng-maxlength="256" required ng-model="appRole.Name">
+                        <span ng-if="frmEditAppRole.name.$touched">
+                            <span class="has-error" ng-show="frmEditAppRole.name.$invalid">Phải nhập tên App Role.</span>
+                            <span class="has-error" ng-show="frmEditAppRole.name.$error.maxlength">Tên App Role chỉ được 50 ký tự.</span>
+                            <span class="has-error" ng-show="hasValueInDb">Tên App Role đã tồn tại.</span>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Mô tả</label>
+                    <div class="col-sm-10">
+                        <input type="text" autocomplete="off" ng-maxlength="256" required class="form-control" ng-model="appRole.Description"/>
+                        <span ng-if="frmEditAppRole.description.$touched">
+                            <span class="has-error" ng-show="frmEditAppRole.description.$invalid">Phải nhập mô tả App Role.</span>
+                            <span class="has-error" ng-show="frmEditAppRole.description.$error.maxlength">Mô tả App Role chỉ được 256 ký tự.</span>
+                        </span>
+                    </div>
+                </div>
+            </div><!-- /.box-body -->
+            <div class="box-footer">
+                <button ng-click="cancel()" class="btn btn-default">Hủy</button>
+                <button type="submit" ng-disabled="frmEditAppRole.$invalid || hasValueInDb" class="btn btn-success pull-right">Lưu</button>
+            </div><!-- /.box-footer -->
+        </form>
+    </div><!-- /.box -->
+</section>

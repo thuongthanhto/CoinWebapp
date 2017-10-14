@@ -1,0 +1,135 @@
+﻿.amChartsDataSetSelector {
+    font-size: 12px;
+    font-family: verdana,helvetica,arial,sans-serif;
+}
+
+.amChartsPeriodSelector {
+    font-size: 12px;
+    font-family: verdana,helvetica,arial,sans-serif;
+}
+
+.amChartsButtonSelected {
+    background-color: #CC0000;
+    border-style: solid;
+    border-color: #CC0000;
+    border-width: 1px;
+    color: #FFFFFF;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    margin: 1px;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.amChartsButton {
+    color: #000000;
+    background: transparent;
+    opacity: 0.7;
+    border: 1px solid rgba(0,0,0,.3);
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    margin: 1px;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.amChartsCompareList {
+    border-style: solid;
+    border-color: #CCCCCC;
+    border-width: 1px;
+}
+
+    .amChartsCompareList div {
+        -webkit-box-sizing: initial;
+        box-sizing: initial;
+    }
+
+.amChartsInputField {
+}
+
+.amChartsLegend {
+}
+
+.amChartsPanel {
+}
+table.listview tr th.sortable {
+    cursor: pointer;
+    background-position: right;
+    background-repeat: no-repeat;
+    padding-right: 30px;
+    position: relative;
+}
+
+    table.listview tr th.sortable:after {
+        content: '';
+        position: absolute;
+        width: 15px;
+        height: 10px;
+        top: 50%;
+        margin-top: -5px;
+        background: url('../img/ic-sort-disabled.png') no-repeat right center;
+    }
+
+table.listview tr th.asc:after {
+    background-image: url('../img/ic-sort-asc.png');
+}
+
+table.listview tr th.desc:after {
+    background-image: url('../img/ic-sort-desc.png');
+}
+
+.wa-loading, .block-spinner-bar > div.wa-loading, .page-spinner-bar > div.wa-loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -32px;
+    margin-left: -32px;
+    z-index: 10099;
+    opacity: 1;
+    height: 64px;
+    width: 64px;
+    color: #000;
+    background: #fff url('../img/ajax-loader.gif') no-repeat center center;
+    border-radius: 7px !important;
+    text-align: center;
+    padding: 8px;
+    font-weight: bold;
+}
+
+    .wa-loading.wa-loading-window, .block-spinner-bar > div.wa-loading.wa-loading-window, .page-spinner-bar > div.wa-loading.wa-loading-window {
+        z-index: 10101;
+    }
+
+.block-spinner-bar > div.wa-loading, .page-spinner-bar > div.wa-loading {
+    animation: none;
+    -webkit-animation: none;
+    -webkit-animation-fill-mode: none;
+    animation-fill-mode: none;
+}
+
+.wa-mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10098;
+    width: 100%;
+    background: #000;
+    opacity: 0.1;
+}
+
+    .wa-mask.mask-object {
+        background: #fff;
+        opacity: 0.5;
+    }
+
+    .wa-mask.wa-mask-window {
+        z-index: 10100;
+    }
+
+.has-error {
+        color: red;
+    }
+
+li > a {
+        cursor: pointer;
+    }
